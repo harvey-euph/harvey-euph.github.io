@@ -1,0 +1,20 @@
+title: "Harvey 的個人網頁"
+description: "哈哈"
+author:
+  name: "Harvey"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "哈哈"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/harvey-euph"
+
+baseurl: "" # 這一定要是空字串
+url: "https://harvey-euph.github.io" # 不加斜線結尾
+
+theme: minima
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
