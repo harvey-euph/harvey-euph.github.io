@@ -1,7 +1,7 @@
 ---
 title: "我的第一篇文章"
 date: 2025-07-24 12:00:00 +0800
-categories: [tech]
+categories: [Trash]
 tags: [Jekyll, Chirpy]
 ---
 
