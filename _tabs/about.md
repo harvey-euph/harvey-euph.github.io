@@ -2,9 +2,27 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
+title: 關於我
 ---
 
-<!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip } -->
+> 👋 Hi，我是 **Harvey**，目前在一家新創 Hedge Fund 擔任軟體工程師。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。
 
-> Hi, 我是 Harvey，在新創 Hedge Fund 工作的軟體工程師，熱衷於 C++ 和各種軟體相關技術，會在這邊分享工作中遇到的技術問題和新學到的知識，2023 畢業於台大數學系，曾於 CTBC 擔任 Quant Analyst 實習生
+---
+
+## Professional Experiences
+
+- 現職：新創 Hedge Fund 軟體工程師
+- 專注領域：C++、系統設計、TCP/IP 及其他網路協議
+- 曾任：CTBC 中信銀行 Quant Analyst 實習生
+
+---
+
+## 教育背景
+
+- NTU Math
+
+---
+
+## Contact
+
+歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [GitHub](https://github.com/harvey-euph) 找到我。

@@ -1,7 +1,7 @@
 ---
 title: "Smart-Pointer"
 date: 2025-07-24 12:00:00 +0800
-categories: [C++, Tech]
+categories: [Tech, C++, STL]
 tags: [C++, Tech]
 ---
 
