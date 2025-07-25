@@ -2,6 +2,7 @@
 
 # Import the theme
 theme: jekyll-theme-chirpy
+katex: true
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -81,7 +82,6 @@ theme_mode: # [light | dark]
 #
 # e.g. 'https://cdn.com'
 cdn:
-katex: true
 
 # the avatar on sidebar, support local or CORS resources
 avatar: /assets/img/avatar.jpg
