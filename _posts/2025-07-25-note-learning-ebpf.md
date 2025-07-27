@@ -1,6 +1,6 @@
 ---
 title: "讀書筆記: Learning eBPF"
-date: 2025-07-25 12:00:00 +0800
+date: 2025-07-27 00:00:00 +0800
 categories: [Note]
 tags: [eBPF, Tech, Python]
 ---
@@ -87,25 +87,69 @@ eBPF bytecode 其實是在 kernel 裡面 eBPF 專用的 VM 執行，我們要來
 首先 bytecode 載入會先經過 verifier 檢查是否可以安全執行，verifier 的細節會在 Chapter 6 討論
 eBPF VM 接受 eBPF bytecode，轉成實際的 machine code 之後執行
 
-```
+
+
+```sh
+# 需要的套件
 sudo apt update
 sudo apt install clang llvm
 sudo apt install libbpf-dev
 ```
 
 載入 bytecode 並且可以看到 `/sys/fs/bpf` 有對應的名字
-```
+```sh
 sudo bpftool prog load hello.bpf.o /sys/fs/bpf/hello
 sudo ls /sys/fs/bpf
-sudo bpftool prog list
+sudo bpftool prog list # 從這裡可以看到載入的 hello 的編號 <num>
 sudo bpftool prog show id <num> --pretty
+sudo bpftool net attach xdp id <num> dev enp2s0
+
+# 可以看到網路介面各自被哪些 eBPF 程式 attach
+sudo bpftool net list
+
+# 觀看輸出的兩種方法
 sudo cat /sys/kernel/debug/tracing/trace_pipe # 要注意這裡不能用 tail -f 
 sudo bpftool prog tracelog
+
+# 觀看相關變數或資料
 sudo bpftool map dump name hello.bss
 sudo bpftool map dump name hello.rodata
 
+# 移除 eBPF
 sudo bpftool net detach xdp dev eth0
 sudo rm /sys/fs/bpf/hello
 ```
 
-因為全程使用 c code 進行，不涉及 BCC tool，因此可以進行一般的 bpf function call (這裡暫時沒看懂，因為不知道 )
+因為全程使用 c code 進行，不涉及 BCC tool，因此可以進行一般的 bpf function call (這裡暫時沒搞懂，不知道 hello-func.bpf.c 怎麼載入)
+
+
+## CHAPTER 4 The bpf() System Call
+
+## CHAPTER 7 eBPF Program and Attachment Types
+
+這章要告訴我們有哪些不同的事件可以讓 eBPF 程式附著上去
+不同類型的事件觸發的 eBPF 程式的參數不同，回傳值也有不同意義
+可以使用的 helper function 也有些差異，都會經過 Verifer 檢查是否合法
+
+例如在 XDP 類型的程式中使用 `bpf_get_current_pid_tgid()` 就是不被允許的，因為當 XDP 被觸發時還沒進到任何 user space process 裡面
+
+可以參考 [helper functions man page](https://man7.org/linux/man-pages/man7/bpf-helpers.7.html)
+
+- Tracing
+    - kprobes
+    - tracepoints
+    - raw tracepoints
+    - fentry/fexit probes
+    - perf events
+
+除了一些函數因為安全需求不能被監測之外，你可以把 kprobes 和 kretprobes 安插在任何 kernel function 上，但有可能你的 kernel 版本在編譯的時候某些函數被 inline 而無法
+
+
+## CHAPTER 8 eBPF for Networking
+
+## CHAPTER 10 eBPF Programming
+
+
+eBPF programming consists of two parts:
+- Writing eBPF programs that run in the kernel
+- Writing the user space code that manages and interacts with eBPF programs
