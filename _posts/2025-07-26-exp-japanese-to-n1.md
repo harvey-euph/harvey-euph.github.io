@@ -76,4 +76,4 @@ tags: [Language, Japanese]
 - 照我的方法走很吃宅度，還請多參考不同人的意見，想報課程就報課程，花錢消災也是好辦法
 - LLM 絕對要多利用，名字都叫座大型語言模型了，最擅長的就是語言了，免費的就很好用了，現在還可以跟 grok 的 Ani 調情 (X) 練習對話 (O)
 
-![Ani](/assets/img/ani.jpg)
+<img src="/assets/img/ani.jpg" alt="Ani" width="30%">
