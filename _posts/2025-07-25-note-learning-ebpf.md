@@ -125,6 +125,15 @@ sudo rm /sys/fs/bpf/hello
 
 ## CHAPTER 4 The bpf() System Call
 
+Linux kernel 提供一個 syscall: 
+`int bpf(int cmd, union bpf_attr *attr, unsigned int size);`
+專門用來處理各種 bpf 相關操作，包含
+
+- 載入 bpf 程式
+- 將 bpf 程式附著在事件上
+- 創建 bpf map
+- 操作 bpf map 的 key–value pairs
+
 ## CHAPTER 7 eBPF Program and Attachment Types
 
 這章要告訴我們有哪些不同的事件可以讓 eBPF 程式附著上去
