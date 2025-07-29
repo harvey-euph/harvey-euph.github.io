@@ -5,7 +5,7 @@ order: 4
 title: 關於我
 ---
 
-> 👋 Hi，我是 **Harvey**。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
+👋 Hi，我是 **Harvey**。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
 
 ---
 
@@ -15,10 +15,10 @@ title: 關於我
 
 ### 🔹 Dynamic Hedging — Nassim Nicholas Taleb  
 探討 **期權交易風險管理** 實務的經典作品，適合對量化交易與期權避險策略有興趣的人。  
-<!-- 📖 筆記連結：[Dynamic Hedging 筆記](/_posts/2025-07-25-note-dynamic-hedging.md) -->
+📖 筆記連結：[Dynamic Hedging 筆記](/_posts/2025-07-25-note-dynamic-hedging.md)
 
 ### 🔹 Learning eBPF — Liz Rice  
-<!-- 📖 筆記連結：[eBPF 筆記](/_posts/2025-07-25-note-learning-ebpf.md) -->
+📖 筆記連結：[eBPF 筆記](/_posts/2025-07-25-note-learning-ebpf.md)
 
 ---
 
