@@ -13,15 +13,13 @@ title: 關於我
 
 我平常會挑選對工作與底層理解有幫助的技術書籍閱讀，邊讀邊整理心得與重點筆記，希望幫助記憶，也讓別人更容易入門這些技術。
 
-### 🔹 Dynamic Hedging — Nassim Nicholas Taleb  
+### 🔹 [Dynamic Hedging — Nassim Nicholas Taleb](/posts/note-dynamic-hedging)
 探討 **期權交易風險管理** 實務的經典作品，適合對量化交易與期權避險策略有興趣的人。  
-📖 筆記連結：[Dynamic Hedging 筆記](/posts/note-dynamic-hedging)
 
-### 🔹 Learning eBPF — Liz Rice  
-📖 筆記連結：[eBPF 筆記](/posts/note-learning-ebpf)
+### 🔹 [Learning eBPF — Liz Rice](/posts/note-learning-ebpf)
 
 ---
 
 ## 📬 Contact
 
-歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://github.com/harvey-euph) 找到我。
+歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://www.linkedin.com/in/harveywu-k/) 找到我。
