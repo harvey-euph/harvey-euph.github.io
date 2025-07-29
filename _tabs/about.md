@@ -15,10 +15,10 @@ title: 關於我
 
 ### 🔹 Dynamic Hedging — Nassim Nicholas Taleb  
 探討 **期權交易風險管理** 實務的經典作品，適合對量化交易與期權避險策略有興趣的人。  
-📖 筆記連結：[Dynamic Hedging 筆記](/_posts/2025-07-25-note-dynamic-hedging)
+📖 筆記連結：[Dynamic Hedging 筆記](/posts/2025-07-25-note-dynamic-hedging)
 
 ### 🔹 Learning eBPF — Liz Rice  
-📖 筆記連結：[eBPF 筆記](/_posts/2025-07-25-note-learning-ebpf)
+📖 筆記連結：[eBPF 筆記](/posts/2025-07-25-note-learning-ebpf)
 
 ---
 
