@@ -5,7 +5,7 @@ categories: [Note]
 tags: [eBPF, Tech, Python]
 ---
 
-搭配服用的範例程式碼：[Github](https://github.com/lizrice/learning-ebpf/tree/main)
+原作提供的範例程式碼：[Github](https://github.com/lizrice/learning-ebpf/tree/main)
 
 ## Chapter 1: What Is eBPF, and Why Is It Important?
 
@@ -20,7 +20,7 @@ tags: [eBPF, Tech, Python]
 
 最簡單好入手的工具是 [the BCC Python framework](https://github.com/iovisor/bcc)
 
-先從印 "Hello World!" 開始
+先從印 `"Hello World!"` 開始
 
 ```py
 #!/usr/bin/python  
