@@ -17,8 +17,8 @@ tags: [Japan, Travel]
 
 | 📅 Date | plan | 旅遊 cost | 購物 cost |
 | --- | --- | --- | --- |
-| 2024-12-25 | 22:00 從北車搭機捷出發<br>23:00 抵達桃園機場<br>T1 昇恆昌商品服務中心 取貨 | Cash 機捷 NT$ 150<br>Card 旅平險 NT$ 2864<br>Card 滑雪險 NT$ 528<br>Card 機票：TPE→NRT NT$ 4990 <br>Cash 零食飲料 NT$ 150 <br>Card 網路：SoftBank 5G 20 Days 1GB/Day NT$ 378 | Card vit C *2 NT$ 4260 |
-| 2024-12-26 | ✈️ 桃園機場 T1 02:20 (+8) 起飛<br>🛬 成田機場 T3 06:25 (+9) 抵達<br>💼 工作 (+9) 10:30-19:00<br>🏡 Airbnb 鎌倉 | Cash 宵夜：飛機上泡麵+Asahi ¥1000<br>Cash 成田機場豆皮烏龍麵 ¥920<br>Cash LCB 巴士：成田→東京 ¥1500<br>Cash 凡士林 ¥437<br>Cash 超市：蜜柑 ¥499 鮮奶 ¥319<br>Cash 晚餐：[壽司](https://maps.app.goo.gl/FiA5uNENVtT1F7NX9?g_st=com.google.maps.preview.copy) ¥2145<br>Cash 宵夜：海老蕎麥麵 + 冰棒 + 柚子酒 ¥1420<br>Card Airbnb 鎌倉住宿四天總共：NT$ 3565 | Cash MUJI：襪子*3 ¥990<br>Cash Uniqlo：羽絨衣 ¥12900 保暖褲 ¥2990<br>Cash 3coins：髮圈三個 ¥990 |
+| 2024-12-25 | 22:00 從北車搭機捷出發<br>23:00 抵達 TPE<br>T1 昇恆昌 取貨 | Cash 機捷 NT$ 150<br>Card 旅平險 NT$ 2864<br>Card 滑雪險 NT$ 528<br>Card 機票：TPE→NRT NT$ 4990 <br>Cash 零食飲料 NT$ 150 <br>Card 網路：SoftBank 5G 20 Days 1GB/Day NT$ 378 | Card vit C *2 NT$ 4260 |
+| 2024-12-26 | ✈️ TPE T1 02:20 (+8) 起飛<br>🛬 NRT T3 06:25 (+9) 抵達<br>💼 工作 (+9) 10:30-19:00<br>🏡 Airbnb 鎌倉 | Cash 宵夜：飛機上泡麵+Asahi ¥1000<br>Cash 成田機場豆皮烏龍麵 ¥920<br>Cash LCB 巴士：成田→東京 ¥1500<br>Cash 凡士林 ¥437<br>Cash 超市：蜜柑 ¥499 鮮奶 ¥319<br>Cash 晚餐：[壽司](https://maps.app.goo.gl/FiA5uNENVtT1F7NX9?g_st=com.google.maps.preview.copy) ¥2145<br>Cash 宵夜：海老蕎麥麵 + 冰棒 + 柚子酒 ¥1420<br>Card Airbnb 鎌倉住宿四天總共：NT$ 3565 | Cash MUJI：襪子*3 ¥990<br>Cash Uniqlo：羽絨衣 ¥12900 保暖褲 ¥2990<br>Cash 3coins：髮圈三個 ¥990 |
 | 2024-12-27 | 💼 工作 (+9) 10:30-19:00<br>🏡 Airbnb 鎌倉 | Cash 午餐：[漢堡+炸雞](https://maps.app.goo.gl/cXwZiVQP55iGE98A6?g_st=com.google.maps.preview.copy) ¥1020<br>Cash 蘋果汁+果凍 ¥393<br>Cash 晚餐：[居酒屋](https://maps.app.goo.gl/ewT3zEXuTAMJETz89?g_st=com.google.maps.preview.copy) ¥2500 雞肉丸串 ¥160<br>Cash 宵夜：義大利麵+布丁+梅酒 ¥1020 |  |
 | 2024-12-28 | 🌊 逛江之島一帶<br>🏡 Airbnb 鎌倉 | Cash 早餐：飯糰+奶茶 ¥402<br>Cash 江之島大章魚仙貝 ¥1100<br>Cash 醬油糰子 ¥200<br>Cash 江之島電扶梯 ¥180<br>Cash 江之島燈塔觀景台 ¥500<br>Cash 晚餐：[長谷食堂](https://maps.app.goo.gl/gbaepViW6yq8Ch6C9?g_st=com.google.maps.preview.copy) ¥3476<br>Cash [小宮 GourmetCity](https://maps.app.goo.gl/8wVkCXDSwHHPLzkY8) 青森蘋果+打折壽司 ¥1023<br>Cash 飲料：茶 ¥149 | Cash 龍御守 ¥800<br>Cash 滑雪內層手套 ¥1800 |
 | 2024-12-29 | 🎨 冬コミDay 1<br>🏡 Airbnb 鎌倉 | Cash 午餐：咖哩 ¥1350<br>Card 門票 ¥1331<br>Cash beard papa 泡芙 ¥370<br>Cash 宵夜：炒麵+蘋果啤酒 ¥664 | Cash Uniqlo 內褲*2 ¥990 |
@@ -36,4 +36,4 @@ tags: [Japan, Travel]
 | 2025-01-10 | 💼 工作 (+9) 10:30-19:30<br>🏨 APA 橫濱 | Cash 晚餐：橫濱 Festa Garden 吃到飽 ¥2528<br>Cash 宵夜：優格 ¥160 |  |
 | 2025-01-11 | 🏨 東京 TOKYO E JOY INN | Cash 午餐：橫濱山下公園 漢堡排 大盛 ¥2350<br>Cash 宵夜：草莓 豆乳 牛奶布丁 ¥921<br>Card 住宿：¥3900 | Cash 貓襪子*4 ¥1320<br>Cash 無印 羽絨背心*2 ¥7256<br>Card 行李箱 ¥30000<br>Card 吹風機 + 消耗眼鏡布 + 鼻炎藥 ¥24797 |
 | 2025-01-12 | 逛東大駒場校區&下北澤<br>末班車前往羽田機場<br>羽田貴賓室 | Cash 燒肉 ¥4800<br>Cash 卡拉OK ¥600<br>Cash 咖哩 ¥1900 | Cash NY Cheese 18入*1 12入*2 ¥6804<br>Cash 夾心餅乾 10入*2 ¥2592<br>Cash 焦糖餅乾 ¥1296<br>Card SABON 護手霜 ¥3190 |
-| 2025-01-13 | 貴賓室等<br>✈️ 羽田機場 T3 05:00 (+9) 起飛<br>🛬 桃園機場 T1 07:55 (+8) 抵達<br>要記得去 everrich 取貨<br>💼 工作 (UTC+8) 14:30-18:30<br>(上午請假) |  | Card 機票：HND→TPE NT$ 5341 |  |
+| 2025-01-13 | 貴賓室等<br>✈️ HND T3 05:00 (+9) 起飛<br>🛬 TPE T1 07:55 (+8) 抵達<br>要記得去 everrich 取貨<br>💼 工作 (UTC+8) 14:30-18:30<br>(上午請假) |  | Card 機票：HND→TPE NT$ 5341 |  |
