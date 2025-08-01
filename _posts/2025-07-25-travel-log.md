@@ -27,7 +27,7 @@ tags: [Japan, Travel]
 | 2025-01-01 | 泡溫泉+岩盤浴<br>大阪城<br>🏡 APA 京都駅東 | Card 溫泉：[鶴見緑地湯元水春](https://maps.app.goo.gl/X1xDRxoC9TpxTyAo6) 岩盤浴套票 ¥2050<br>Cash 大阪一日地鐵乘車券 ¥620<br>Cash 午餐：[湯咖哩](https://maps.app.goo.gl/xCuc7XkMoyvdqusY9?g_st=com.google.maps.preview.copy) + 芒果拉西 ¥1830 <br>Card APA 京都駅東 住宿 4 晚含早餐 共 ¥53100<br>Cash 置物櫃 2 天 ¥2000 |  |
 | 2025-01-02 | 💼 工作 (+9) 10:30-19:00<br>伏見稻荷大社 + 千本鳥居<br>🏡 APA 京都駅東 | Cash 超商有買一波<br>Cash 攤販：味噌拉麵 ¥700 (超雷超普超小碗)<br>Cash 宵夜：草莓牛奶+小蛋糕 ¥444 |  |
 | 2025-01-03 | 💼 工作 (+9) 10:30-19:00<br>🏡 APA 京都駅東 | Cash 晚餐：壽司 ¥3084<br>Cash 點心 + 泡麵 + 酒 ¥658 |  |
-| 2025-01-04 | 逛宇治一帶，爬大吉山<br>🏡 APA 京都駅東 | Cash 午餐+下午點心：福壽園宇治茶工房 朝日御膳 ¥2475<br>Cash 晚餐：Fami 串燒+可樂餅+炸雞+草莓牛奶 713 |  |
+| 2025-01-04 | 逛宇治一帶，爬大吉山<br>🏡 APA 京都駅東 | Cash 下午茶：[福壽園宇治茶工房](https://maps.app.goo.gl/wmsLFYWH6ZezJ6Pj7) 朝日御膳 ¥2475<br>Cash 晚餐：Fami 串燒+可樂餅+炸雞+草莓牛奶 713 |  |
 | 2025-01-05 | 逛京都<br>🚌 京都→長岡 (夜行巴士) | Cash 晚餐：牛排定食 ¥2530<br>Cash 伴手禮抹茶點心盒 ¥1080<br>Cash STARBUCKS 熱奶茶 ¥565<br>Card 夜行巴士 ¥10480 | Card UNIQLO 睡衣*2 ¥5446<br>Cash tutu anna 手套 ¥1859<br>Cash 千束公仔 ¥1787 |
 | 2025-01-06 | 🚅 長岡→越後湯澤<br>⛷️ 滑雪<br>🏨 Airbnb 湯澤 | Cash 長岡→越後湯澤 (JR 上越線 15 站) ¥1340<br>Cash 高原 4時間雪票：¥4900<br>Card 租借三天雪具 ¥20400<br>Cash 午餐：湯烏龍麵 ¥750<br>Cash 晚餐：拉麵 ¥1300<br>Card 兩晚：NT$ 8179 |  |
 | 2025-01-07 | ⛷️ 滑雪<br>🏨 Airbnb 湯澤 | Cash 公車票：¥330<br>Cash 午餐：雞腿丼+飯糰 ¥1450<br>Card 石打丸山 4時間雪票 ¥5800<br>Cash 置物櫃 ¥400 |  |
