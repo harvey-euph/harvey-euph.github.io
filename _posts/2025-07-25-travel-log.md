@@ -35,5 +35,5 @@ tags: [Japan, Travel]
 | 2025-01-09 | 💼 工作 DAY (UTC+9) 10:30-19:30<br>🏨 APA 橫濱 | Cash 早餐：炒麵 草莓歐蕾 ¥764<br>Cash 晚餐：KollaBo 韓國烤肉 set ¥3000<br>Cash 宵夜：蜜柑酒 蘋果汁 冰淇淋 ¥975 |  |
 | 2025-01-10 | 💼 工作 DAY (UTC+9) 10:30-19:30<br>🏨 APA 橫濱 | Cash 晚餐：橫濱 Festa Garden 吃到飽 ¥2528<br>Cash 宵夜：優格 ¥160 |  |
 | 2025-01-11 | 🏨 東京 TOKYO E JOY INN | Cash 午餐：橫濱山下公園 漢堡排 大盛 ¥2350<br>Cash 宵夜：草莓 豆乳 牛奶布丁 ¥921<br>Card 住宿：¥3900 | Cash 貓襪子*4 ¥1320<br>Cash 無印 羽絨背心*2 ¥7256<br>Card 行李箱 ¥30000<br>Card 吹風機 + 消耗眼鏡布 + 鼻炎藥 ¥24797 |
-| 2025-01-12 | 末班車前往羽田機場<br>羽田貴賓室 | Cash 燒肉 ¥4800<br>Cash 卡拉OK ¥600<br>Cash 咖哩 ¥1900 | Cash NY Cheese 18入*1 12入*2 ¥6804<br>Cash 夾心餅乾 10入*2 ¥2592<br>Cash 焦糖餅乾 ¥1296<br>Card SABON 護手霜 ¥3190 |
-| 2025-01-13 | ✈️ 羽田機場 T3 05:00 (+9) 起飛 貴賓室等<br>🛬 桃園機場 T1 07:55 (+8) 抵達<br>要記得去 everrich 取貨<br>💼 工作 DAY (UTC+8) 14:30-18:30<br>(上午請假) |  | Card 機票：HND→TPE NT$ 5341 |  |
+| 2025-01-12 | 逛東大駒場校區&下北澤<br>末班車前往羽田機場<br>羽田貴賓室 | Cash 燒肉 ¥4800<br>Cash 卡拉OK ¥600<br>Cash 咖哩 ¥1900 | Cash NY Cheese 18入*1 12入*2 ¥6804<br>Cash 夾心餅乾 10入*2 ¥2592<br>Cash 焦糖餅乾 ¥1296<br>Card SABON 護手霜 ¥3190 |
+| 2025-01-13 | 貴賓室等<br>✈️ 羽田機場 T3 05:00 (+9) 起飛<br>🛬 桃園機場 T1 07:55 (+8) 抵達<br>要記得去 everrich 取貨<br>💼 工作 DAY (UTC+8) 14:30-18:30<br>(上午請假) |  | Card 機票：HND→TPE NT$ 5341 |  |
