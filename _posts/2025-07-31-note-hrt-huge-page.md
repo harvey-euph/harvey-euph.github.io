@@ -36,7 +36,7 @@ TLB 在 CPU cache 裡面，他存著一些最近查過的 Page Table 內容，�
 
 - Transparent huge pages
 
-這種方法就是在需要的時候從實體記憶體裡面開始找足夠的 size，有以下兩種選項
+在需要的時候從實體記憶體裡面開始找足夠的 size，有以下兩種選項
 
 always mode
 : 總是拿 huge pages
@@ -44,7 +44,9 @@ always mode
 madvise mode
 : 要用 system call madvise 來指定要 huge pages
 
-- Hugetlbfs 是另一種透過 pseudo filesystem 方式，會先準備好一些預先分配好的 huge pageS，因此能像分配 regular page 一樣快速
+- Hugetlbfs
+
+是另一種透過 pseudo filesystem 方式，會先準備好一些預先分配好的 huge pageS，因此能像分配 regular page 一樣快速
 
 潛在的問題是如果 Hugetlbfs 分配已達上限時會送 SIGBUS，如果沒有 handle 好，程式會死掉，儘管有一些手段來保護，但還是容易遇到達到分配上限的問題，因此不推薦使用在會需要分裂出子進程的程式。
 
