@@ -1,0 +1,29 @@
+---
+title: "讀書筆記: Learning eBPF"
+date: 2025-07-27 00:00:00 +0800
+categories: [Careers, Notes]
+tags: [eBPF, Tech, Python]
+---
+
+## FIX Message Structure
+
+## Session Management
+
+FIX Protocol 是一個基於 TCP 的網路協議，但與 HTTP 不同，FIX 是一個具有狀態的協議
+
+必須建立連線並且進行身分認證才可以進一步交換資訊，這個行為叫做 Log On
+連線期間要告訴對方我還活著，要定時送 Heartbeat，通常會是每 30s 或 1m 的間隔，
+而當你想要結束連線時，要告訴對方我要離開了，這個行為叫做 Log Out
+ 
+當你很久沒收到對方的 Heartbeat，可以發送一個 Test Request，對方如果沒有馬上回 Heartbeat 給你，就可以視為對方已經死了，就可以主動中斷連線
+
+Sequence Reset
+Resend Request
+
+## Order and Execution Management
+
+## Child Order and Parent Order Matching
+
+## High Level Orderbook Management
+
+## Latency Issue
