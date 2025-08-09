@@ -39,8 +39,9 @@ TLB 在 CPU cache 裡面，他存著一些最近查過的 Page Table 內容，�
 分配一個 Huge Page 需要 512 個連續的空閒 Regular Pages，如果記憶體空間還很多，當然是有可能找到的，但通常不會這麼好運，所以可能需要移動一些使用中的 Page，把破碎的片段整理好，空出 512 頁連續的 Page
 
 我們可以打開 Transparent huge pages 的設定，有兩種選項： 
-always mode 和 
+always mode
 : 總是拿 huge pages
+
 madvise mode
 : 要用 system call madvise 給建議
 
