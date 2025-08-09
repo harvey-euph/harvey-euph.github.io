@@ -32,10 +32,19 @@ TLB 在 CPU cache 裡面，他存著一些最近查過的 Page Table 內容，�
 
 並且 Huge Pages 的 Page Table 結構也比 regular pages 的更簡單，能夠用較少的 memory access 次數來查到
 
-一個簡單的 [benchmark test](https://github.com/hudson-trading/hrtbeat/blob/master/huge_memory_bench.cpp)
+一個簡單的 [benchmark test](https://github.com/hudson-trading/hrtbeat/blob/master/huge_memory_bench.cpp) 證明用 huge pages 會讓執行速度更快
 
-分配一個 Huge Page 需要 512 個連續的空閒 Regular Pages
+**但是**
 
-> 未完待續
-{: .prompt-tip }
+分配一個 Huge Page 需要 512 個連續的空閒 Regular Pages，如果記憶體空間還很多，當然是有可能找到的，但通常不會這麼好運，所以可能需要移動一些使用中的 Page，把破碎的片段整理好，空出 512 頁連續的 Page
+
+我們可以打開 Transparent huge pages 的設定，有兩種選項： 
+always mode 和 
+: 總是拿 huge pages
+madvise mode
+: 要用 system call madvise 給建議
+
+Hugetlbfs 是另一中透過 pseudo filesystem 分配 huge pages 的方式，會先準備好一些預先分配好的 huge page，因此能像分配 regular page 一樣快速
+
+潛在的問題是如果 Hugetlbfs 分配已達上限時會送 SIGBUS，如果沒有 handle 好，程式會死掉，因此不推薦使用在會需要分裂出子進程的程式
 
