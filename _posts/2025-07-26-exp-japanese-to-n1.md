@@ -3,6 +3,7 @@ title: "經驗分享: 日文從 0 到 N1 的學習過程"
 date: 2025-07-27 00:00:00 +0800
 categories: [Life, Language]
 tags: [Language, Japanese]
+pin: true
 ---
 
 想寫心得想很久了，最近又被問到，認真寫一次，以後再被問到就可以直接貼連結了。
