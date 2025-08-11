@@ -196,7 +196,7 @@ root@LAPTOP-HARVEY:/proc/1# readlink exe
 - exe 是 Executable file path，對應到 `task->mm->exe_file`
 - root 則是這個 process 的 root 路徑，對應到 `task->fs->root`
 
-對一個 process 來說 root 不一定是整個系統的 root，改變一個 process 的 root 有他的優勢，可以參考[這篇](/_posts/chroot)
+對一個 process 來說 root 不一定是整個系統的 root，改變一個 process 的 root 有他的優勢，可以參考[這篇](/posts/chroot)
 
 
 以下附上用到的 `fs` 和 `mm` 內容結構
