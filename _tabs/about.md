@@ -29,18 +29,20 @@ title: About me
 
 <style>
 .toggle {
-  border: 1px solid #ddd;
+  border: 1px solid var(--toggle-border);
   border-radius: 6px;
   margin: 1em 0;
-  background: #f9f9f9;
+  background: var(--toggle-bg);
   overflow: hidden;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
 .toggle.open {
-  background: #fff;
-  border-color: #aaa;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: var(--toggle-bg-open);
+  border-color: var(--toggle-border-open);
+  box-shadow: var(--toggle-shadow);
 }
+
 .toggle-header {
   cursor: pointer;
   padding: 0.6em 1em;
@@ -49,25 +51,48 @@ title: About me
   align-items: center;
   position: relative;
 }
+
 .toggle-header::before {
   content: "▶";
   display: inline-block;
   margin-right: 0.5em;
   transition: transform 0.2s ease;
 }
+
 .toggle.open .toggle-header::before {
   transform: rotate(90deg);
 }
+
 .toggle-content {
   max-height: 0;
   overflow: hidden;
   padding: 0 1em;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
+
 .toggle.open .toggle-content {
   max-height: 500px;
   padding: 0.6em 1em;
 }
+
+/* Light 模式顏色變數 */
+:root {
+  --toggle-bg: #f9f9f9;
+  --toggle-bg-open: #ffffff;
+  --toggle-border: #ddd;
+  --toggle-border-open: #aaa;
+  --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark 模式顏色變數 */
+html.dark {
+  --toggle-bg: #2b2b2b;
+  --toggle-bg-open: #1f1f1f;
+  --toggle-border: #444;
+  --toggle-border-open: #666;
+  --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
 </style>
 
 <script>
@@ -84,12 +109,15 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="toggle">
   <div class="toggle-header">📌 我的興趣</div>
   <div class="toggle-content">
-    我喜歡：
-    - 程式設計
-    - Linux Kernel
-    - 金融交易系統  
+    <p>我喜歡：</p>
+    <ul>
+      <li>程式設計</li>
+      <li>Linux Kernel</li>
+      <li>金融交易系統</li>
+    </ul>
   </div>
 </div>
+
 
 <div class="toggle">
   <div class="toggle-header">📂 我的專案</div>
@@ -102,5 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <details>
     <summary>Toggle</summary>
-Text in toggle
+- Text in toggle
+- Text in toggle 2
+- Text in toggle 3
 </details>
