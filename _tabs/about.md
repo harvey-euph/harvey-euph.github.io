@@ -2,8 +2,10 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
-title: 關於我
+title: About me
 ---
+
+
 
 👋 Hi，我是 **Harvey**。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
 
@@ -23,3 +25,13 @@ title: 關於我
 ## 📬 Contact
 
 歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://www.linkedin.com/in/harveywu-k/) 找到我。
+
+
+<div class="toggle">
+  <div class="toggle-header">📌 點我展開更多內容</div>
+  <div class="toggle-content">
+    這裡是隱藏的內容，可以用 **Markdown** 格式（也能放圖片）  
+    - 列表項目 1  
+    - 列表項目 2
+  </div>
+</div>

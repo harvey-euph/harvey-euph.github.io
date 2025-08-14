@@ -1,0 +1,10 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toggle").forEach(function (toggle) {
+    const header = toggle.querySelector(".toggle-header");
+    header.addEventListener("click", function () {
+      toggle.classList.toggle("open");
+    });
+  });
+});
+</script>
