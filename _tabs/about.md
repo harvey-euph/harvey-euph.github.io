@@ -26,30 +26,73 @@ title: About me
 
 歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://www.linkedin.com/in/harveywu-k/) 找到我。
 
-
 <style>
+/* === Toggle List Dark/Light 顏色變數（Chirpy 專用）=== */
+html {
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      --toggle-bg: #ffffff;
+      --toggle-bg-open: #f9fafb;
+      --toggle-border: #e5e7eb;
+      --toggle-border-open: #d1d5db;
+      --toggle-text: #111827;
+      --toggle-hover: #f3f4f6;
+    }
+    &[data-mode='dark'] {
+      --toggle-bg: #0f1115;
+      --toggle-bg-open: #1a1d24;
+      --toggle-border: #2a2f3a;
+      --toggle-border-open: #3b4252;
+      --toggle-text: #e5e7eb;
+      --toggle-hover: #171a21;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      --toggle-bg: #0f1115;
+      --toggle-bg-open: #1a1d24;
+      --toggle-border: #2a2f3a;
+      --toggle-border-open: #3b4252;
+      --toggle-text: #e5e7eb;
+      --toggle-hover: #171a21;
+    }
+    &[data-mode='light'] {
+      --toggle-bg: #ffffff;
+      --toggle-bg-open: #f9fafb;
+      --toggle-border: #e5e7eb;
+      --toggle-border-open: #d1d5db;
+      --toggle-text: #111827;
+      --toggle-hover: #f3f4f6;
+    }
+  }
+}
+
+/* === Toggle 元件樣式 === */
 .toggle {
-  border: 1px solid var(--toggle-border);
-  border-radius: 6px;
-  margin: 1em 0;
-  background-color: var(--toggle-bg) !important; /* 修正白底問題 */
+  border: 1px solid var(--toggle-border) !important;
+  border-radius: 0.75rem;
+  background-color: var(--toggle-bg) !important;
   overflow: hidden;
+  margin: 1em 0;
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .toggle.open {
   background-color: var(--toggle-bg-open) !important;
-  border-color: var(--toggle-border-open);
-  box-shadow: var(--toggle-shadow);
+  border-color: var(--toggle-border-open) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .toggle-header {
   cursor: pointer;
-  padding: 0.6em 1em;
+  padding: 0.75em 1em;
   font-weight: bold;
+  color: var(--toggle-text) !important;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .toggle-header::before {
@@ -63,37 +106,34 @@ title: About me
   transform: rotate(90deg);
 }
 
+.toggle-header:hover {
+  background-color: var(--toggle-hover) !important;
+}
+
 .toggle-content {
   max-height: 0;
   overflow: hidden;
   padding: 0 1em;
+  color: var(--toggle-text) !important;
   transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .toggle.open .toggle-content {
   max-height: 500px;
-  padding: 0.6em 1em;
-}
-
-/* Light 模式 */
-:root {
-  --toggle-bg: #f9f9f9;
-  --toggle-bg-open: #ffffff;
-  --toggle-border: #ddd;
-  --toggle-border-open: #aaa;
-  --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* Dark 模式 */
-html.dark {
-  --toggle-bg: #2b2b2b;
-  --toggle-bg-open: #1f1f1f;
-  --toggle-border: #444;
-  --toggle-border-open: #666;
-  --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  padding: 0.6em 1em 1em;
 }
 </style>
 
+<div class="toggle">
+  <div class="toggle-header">📌 我的興趣</div>
+  <div class="toggle-content">
+    <ul>
+      <li>程式設計</li>
+      <li>Linux Kernel</li>
+      <li>金融交易系統</li>
+    </ul>
+  </div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -106,16 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<div class="toggle">
-  <div class="toggle-header">📌 我的興趣</div>
-  <div class="toggle-content">
-    <ul>
-      <li>程式設計</li>
-      <li>Linux Kernel</li>
-      <li>金融交易系統</li>
-    </ul>
-  </div>
-</div>
 
 <details>
     <summary>Toggle</summary>
