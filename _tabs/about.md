@@ -27,11 +27,75 @@ title: About me
 歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://www.linkedin.com/in/harveywu-k/) 找到我。
 
 
+<style>
+.toggle {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 1em 0;
+  background: #f9f9f9;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+.toggle.open {
+  background: #fff;
+  border-color: #aaa;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.toggle-header {
+  cursor: pointer;
+  padding: 0.6em 1em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.toggle-header::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+}
+.toggle.open .toggle-header::before {
+  transform: rotate(90deg);
+}
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1em;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.toggle.open .toggle-content {
+  max-height: 500px;
+  padding: 0.6em 1em;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".toggle").forEach(function (toggle) {
+    const header = toggle.querySelector(".toggle-header");
+    header.addEventListener("click", function () {
+      toggle.classList.toggle("open");
+    });
+  });
+});
+</script>
+
 <div class="toggle">
-  <div class="toggle-header">📌 點我展開更多內容</div>
+  <div class="toggle-header">📌 我的興趣</div>
   <div class="toggle-content">
-    這裡是隱藏的內容，可以用 **Markdown** 格式（也能放圖片）  
-    - 列表項目 1  
-    - 列表項目 2
+    我喜歡：
+    - 程式設計
+    - Linux Kernel
+    - 金融交易系統  
+  </div>
+</div>
+
+<div class="toggle">
+  <div class="toggle-header">📂 我的專案</div>
+  <div class="toggle-content">
+    - Market Data Processing  
+    - 高頻交易系統  
+    - eBPF 系統監控工具  
   </div>
 </div>
