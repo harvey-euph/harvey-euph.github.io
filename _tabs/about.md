@@ -99,3 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
     - eBPF 系統監控工具  
   </div>
 </div>
+
+<details>
+    <summary>Toggle</summary>
+Text in toggle
+</details>
