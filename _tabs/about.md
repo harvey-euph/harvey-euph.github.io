@@ -5,7 +5,8 @@ order: 4
 title: About me
 ---
 
-
+<link rel="stylesheet" href="{{ '/assets/css/toggle.css' | relative_url }}">
+<script src="{{ '/assets/js/toggle.js' | relative_url }}"></script>
 
 👋 Hi，我是 **Harvey**。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
 
@@ -27,8 +28,6 @@ title: About me
 歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://www.linkedin.com/in/harveywu-k/) 找到我。
 
 
-<link rel="stylesheet" href="{{ '/assets/css/toggle.css' | relative_url }}">
-<script src="{{ '/assets/js/toggle.js' | relative_url }}"></script>
 
 
 <div class="toggle">
@@ -38,15 +37,16 @@ title: About me
       <li>程式設計</li>
       <li>Linux Kernel</li>
       <li>金融交易系統</li>
+      <div class="toggle">
+        <div class="toggle-header">📌 我的興趣</div>
+        <div class="toggle-content">
+            <ul>
+            <li>程式設計</li>
+            <li>Linux Kernel</li>
+            <li>金融交易系統</li>
+            </ul>
+        </div>
+        </div>
     </ul>
   </div>
 </div>
-
-<details>
-    <summary>Toggle</summary>
-    <ul>
-      <li>程式設計</li>
-      <li>Linux Kernel</li>
-      <li>金融交易系統</li>
-    </ul>
-</details>
