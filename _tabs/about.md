@@ -8,7 +8,32 @@ title: About me
 <link rel="stylesheet" href="{{ '/assets/css/toggle.css' | relative_url }}">
 <script src="{{ '/assets/js/toggle.js' | relative_url }}"></script>
 
-👋 Hi，我是 **Harvey**。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
+👋 Hi, I'm **Harvey**, graduated from NTU Math in 2023. I would like to share my life and career relateed topics here, with some thing I have been doing and dones. Here you can pick which part of me you want to know.
+
+<div class="toggle">
+  <div class="toggle-header">📌 My Life</div>
+  <div class="toggle-content">
+    <ul>
+      <li>Example 1</li>
+      <li>Example 2</li>
+      <li>Example 3</li>
+    </ul>
+  </div>
+</div>
+
+<div class="toggle">
+  <div class="toggle-header">📌 My Career</div>
+  <div class="toggle-content">
+    <p>Example 0</p>
+    <ul>
+      <li>Example 1</li>
+      <li>Example 2</li>
+      <li>Example 3</li>
+    </ul>
+  </div>
+</div>
+
+。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
 
 ---
 
@@ -30,23 +55,3 @@ title: About me
 
 
 
-<div class="toggle">
-  <div class="toggle-header">📌 我的興趣</div>
-  <div class="toggle-content">
-    <ul>
-      <li>程式設計</li>
-      <li>Linux Kernel</li>
-      <li>金融交易系統</li>
-      <div class="toggle">
-        <div class="toggle-header">📌 我的興趣</div>
-        <div class="toggle-content">
-            <ul>
-            <li>程式設計</li>
-            <li>Linux Kernel</li>
-            <li>金融交易系統</li>
-            </ul>
-        </div>
-        </div>
-    </ul>
-  </div>
-</div>
