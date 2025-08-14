@@ -32,13 +32,13 @@ title: About me
   border: 1px solid var(--toggle-border);
   border-radius: 6px;
   margin: 1em 0;
-  background: var(--toggle-bg);
+  background-color: var(--toggle-bg) !important; /* 修正白底問題 */
   overflow: hidden;
-  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .toggle.open {
-  background: var(--toggle-bg-open);
+  background-color: var(--toggle-bg-open) !important;
   border-color: var(--toggle-border-open);
   box-shadow: var(--toggle-shadow);
 }
@@ -75,7 +75,7 @@ title: About me
   padding: 0.6em 1em;
 }
 
-/* Light 模式顏色變數 */
+/* Light 模式 */
 :root {
   --toggle-bg: #f9f9f9;
   --toggle-bg-open: #ffffff;
@@ -84,7 +84,7 @@ title: About me
   --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Dark 模式顏色變數 */
+/* Dark 模式 */
 html.dark {
   --toggle-bg: #2b2b2b;
   --toggle-bg-open: #1f1f1f;
@@ -92,8 +92,8 @@ html.dark {
   --toggle-border-open: #666;
   --toggle-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
-
 </style>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -109,22 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
 <div class="toggle">
   <div class="toggle-header">📌 我的興趣</div>
   <div class="toggle-content">
-    <p>我喜歡：</p>
     <ul>
       <li>程式設計</li>
       <li>Linux Kernel</li>
       <li>金融交易系統</li>
     </ul>
-  </div>
-</div>
-
-
-<div class="toggle">
-  <div class="toggle-header">📂 我的專案</div>
-  <div class="toggle-content">
-    - Market Data Processing  
-    - 高頻交易系統  
-    - eBPF 系統監控工具  
   </div>
 </div>
 
