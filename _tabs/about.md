@@ -26,103 +26,10 @@ title: About me
 
 歡迎交流與討論，未來會不定期分享在工作中遇到的 **技術難題與新知筆記**，你也可以透過 [LinkedIn](https://www.linkedin.com/in/harveywu-k/) 找到我。
 
-<style>
-/* === Toggle List Dark/Light 顏色變數（Chirpy 專用）=== */
-html {
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      --toggle-bg: #ffffff;
-      --toggle-bg-open: #f9fafb;
-      --toggle-border: #e5e7eb;
-      --toggle-border-open: #d1d5db;
-      --toggle-text: #111827;
-      --toggle-hover: #f3f4f6;
-    }
-    &[data-mode='dark'] {
-      --toggle-bg: #0f1115;
-      --toggle-bg-open: #1a1d24;
-      --toggle-border: #2a2f3a;
-      --toggle-border-open: #3b4252;
-      --toggle-text: #e5e7eb;
-      --toggle-hover: #171a21;
-    }
-  }
 
-  @media (prefers-color-scheme: dark) {
-    &:not([data-mode]),
-    &[data-mode='dark'] {
-      --toggle-bg: #0f1115;
-      --toggle-bg-open: #1a1d24;
-      --toggle-border: #2a2f3a;
-      --toggle-border-open: #3b4252;
-      --toggle-text: #e5e7eb;
-      --toggle-hover: #171a21;
-    }
-    &[data-mode='light'] {
-      --toggle-bg: #ffffff;
-      --toggle-bg-open: #f9fafb;
-      --toggle-border: #e5e7eb;
-      --toggle-border-open: #d1d5db;
-      --toggle-text: #111827;
-      --toggle-hover: #f3f4f6;
-    }
-  }
-}
+<link rel="stylesheet" href="{{ '/assets/css/toggle.css' | relative_url }}">
+<script src="{{ '/assets/js/toggle.js' | relative_url }}"></script>
 
-/* === Toggle 元件樣式 === */
-.toggle {
-  border: 1px solid var(--toggle-border) !important;
-  border-radius: 0.75rem;
-  background-color: var(--toggle-bg) !important;
-  overflow: hidden;
-  margin: 1em 0;
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.toggle.open {
-  background-color: var(--toggle-bg-open) !important;
-  border-color: var(--toggle-border-open) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.toggle-header {
-  cursor: pointer;
-  padding: 0.75em 1em;
-  font-weight: bold;
-  color: var(--toggle-text) !important;
-  display: flex;
-  align-items: center;
-}
-
-.toggle-header::before {
-  content: "▶";
-  display: inline-block;
-  margin-right: 0.5em;
-  transition: transform 0.2s ease;
-}
-
-.toggle.open .toggle-header::before {
-  transform: rotate(90deg);
-}
-
-.toggle-header:hover {
-  background-color: var(--toggle-hover) !important;
-}
-
-.toggle-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 1em;
-  color: var(--toggle-text) !important;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.toggle.open .toggle-content {
-  max-height: 500px;
-  padding: 0.6em 1em 1em;
-}
-</style>
 
 <div class="toggle">
   <div class="toggle-header">📌 我的興趣</div>
@@ -134,18 +41,6 @@ html {
     </ul>
   </div>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".toggle").forEach(function (toggle) {
-    const header = toggle.querySelector(".toggle-header");
-    header.addEventListener("click", function () {
-      toggle.classList.toggle("open");
-    });
-  });
-});
-</script>
-
 
 <details>
     <summary>Toggle</summary>
