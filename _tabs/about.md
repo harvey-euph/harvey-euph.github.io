@@ -119,7 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <details>
     <summary>Toggle</summary>
-- Text in toggle
-- Text in toggle 2
-- Text in toggle 3
+    <ul>
+      <li>程式設計</li>
+      <li>Linux Kernel</li>
+      <li>金融交易系統</li>
+    </ul>
 </details>
