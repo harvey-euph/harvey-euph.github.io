@@ -2,9 +2,9 @@ module Jekyll
   class ToggleBlock < Liquid::Block
     def initialize(tag_name, markup, tokens)
       super
-      args = markup.strip.split(" ")
-      @title = args[0] || ""
-      @default_open = args.include?("open") # 如果有 "open" 參數
+      args = markup.strip.split(/\s+/)
+      @open = args.delete('open')
+      @title = args.join(' ')
     end
 
     def render(context)
@@ -16,8 +16,10 @@ module Jekyll
 
       content_html = converter.convert(super.strip)
 
+      open_class = @open ? ' open' : ''
+
       <<~HTML
-      <div class="toggle#{' open' if @default_open}">
+      <div class="toggle#{open_class}">
         <div class="toggle-header">#{@title}</div>
         <div class="toggle-content">
           #{content_html}
