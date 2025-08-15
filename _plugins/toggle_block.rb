@@ -1,26 +1,23 @@
 module Jekyll
   class ToggleBlock < Liquid::Block
-    def initialize(tag_name, title, tokens)
+    def initialize(tag_name, markup, tokens)
       super
-      @title = title.strip
+      args = markup.strip.split(" ")
+      @title = args[0] || ""
+      @default_open = args.include?("open") # 如果有 "open" 參數
     end
 
     def render(context)
-      # 自動啟用 toggle CSS/JS
       page = context.registers[:page]
       page['use_toggle'] = true
 
       site = context.registers[:site]
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
 
-      # 先取得 block 內容
-      content = super.strip
-
-      # 渲染為 HTML（支援 Markdown 語法）
-      content_html = converter.convert(content)
+      content_html = converter.convert(super.strip)
 
       <<~HTML
-      <div class="toggle">
+      <div class="toggle#{' open' if @default_open}">
         <div class="toggle-header">#{@title}</div>
         <div class="toggle-content">
           #{content_html}

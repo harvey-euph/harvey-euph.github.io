@@ -18,6 +18,13 @@ Statement
 - Example 3
 {% endtoggle %}
 
+{% toggle 💼 My Career open %}
+Statement
+- Example 1
+- Example 2
+- Example 3
+{% endtoggle %}
+
 {% toggle 🌱 My Life %}
 Statement
 - Example 1
@@ -25,6 +32,13 @@ Statement
 - Example 3
 
 {% toggle 🌱 My Life %}
+- sub_item 1
+- sub_item 2
+- sub_item 3
+- sub_item 4
+{% endtoggle %}
+
+{% toggle 🌱 My Life open %}
 - sub_item 1
 - sub_item 2
 - sub_item 3
