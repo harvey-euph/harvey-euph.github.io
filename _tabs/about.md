@@ -13,13 +13,13 @@ Take your time, look around, and discover whichever part of my story sparks your
 
 {% toggle 💼 My Career %}
 
-    {% toggle Quant Developer - Aargo Trade %}
-        C++
-    {% endtoggle %}
-    
-    {% toggle Quant Analyst - CTBC Bank %}
-        Financial Derivatives Pricing
-    {% endtoggle %}
+{% toggle Quant Developer - Aargo Trade %}
+    C++
+{% endtoggle %}
+
+{% toggle Quant Analyst - CTBC Bank %}
+    Financial Derivatives Pricing
+{% endtoggle %}
 
 {% endtoggle %}
 
