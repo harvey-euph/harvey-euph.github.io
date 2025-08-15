@@ -6,7 +6,9 @@ title: About me
 ---
 
 👋 Hi, I’m Harvey — I graduated from NTU with a degree in Mathematics in 2023.
+
 This little corner of the internet is where I share pieces of my life, my career journey, and the projects that have shaped me — both the ones I’m working on now and the ones I’ve completed.
+
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
 
 {% toggle 💼 My Career %}
