@@ -8,10 +8,19 @@ title: About me
 <link rel="stylesheet" href="{{ '/assets/css/toggle.css' | relative_url }}">
 <script src="{{ '/assets/js/toggle.js' | relative_url }}"></script>
 
-👋 Hi, I'm **Harvey**, graduated from NTU Math in 2023. I would like to share my life and career relateed topics here, with some thing I have been doing and dones. Here you can pick which part of me you want to know.
+👋 Hi, I’m Harvey — I graduated from NTU with a degree in Mathematics in 2023.
+This little corner of the internet is where I share pieces of my life, my career journey, and the projects that have shaped me — both the ones I’m working on now and the ones I’ve completed.
+Take your time, look around, and discover whichever part of my story sparks your curiosity.
+
+{% toggle 💼 My Career %}
+- Example 1
+- Example 2
+- Example 3
+{% endtoggle %}
+
 
 <div class="toggle">
-  <div class="toggle-header">📌 My Life</div>
+  <div class="toggle-header">🌱 My Life</div>
   <div class="toggle-content">
     <ul>
       <li>Example 1</li>
@@ -22,7 +31,7 @@ title: About me
 </div>
 
 <div class="toggle">
-  <div class="toggle-header">📌 My Career</div>
+  <div class="toggle-header">💼 My Career</div>
   <div class="toggle-content">
     <p>Example 0</p>
     <ul>
