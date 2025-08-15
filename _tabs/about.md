@@ -13,12 +13,12 @@ Take your time, look around, and discover whichever part of my story sparks your
 
 {% toggle 💼 My Career %}
 
-{% toggle Quant Developer - Aargo Trade %}
-    C++
+{% toggle Quant Developer - Aargo Trade (2024/6–Present) %}
+    C++ Development and Trading Related Programming, including Order and Execution Management, High Level Market data process, FIX protocol.
 {% endtoggle %}
 
-{% toggle Quant Analyst - CTBC Bank %}
-    Financial Derivatives Pricing
+{% toggle Quant Analyst - CTBC Bank (2022/4–2023/10) %}
+    Financial Derivatives Pricing on FX and Fixed Income product.
 {% endtoggle %}
 
 {% endtoggle %}
