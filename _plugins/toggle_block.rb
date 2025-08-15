@@ -7,8 +7,8 @@ module Jekyll
 
     def render(context)
       # 自動啟用 toggle CSS/JS
-      page = context.registers[:page]
-      page['use_toggle'] = true
+      # page = context.registers[:page]
+      # page['use_toggle'] = true
 
       content = super.strip
       <<~HTML
