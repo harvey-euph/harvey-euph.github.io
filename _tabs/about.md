@@ -12,17 +12,15 @@ This little corner of the internet is where I share pieces of my life, my career
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
 
 {% toggle 💼 My Career %}
-Statement
-- Example 1
-- Example 2
-- Example 3
-{% endtoggle %}
 
-{% toggle 💼 My Career open %}
-Statement
-- Example 1
-- Example 2
-- Example 3
+    {% toggle Quant Developer - Aargo Trade %}
+
+    {% endtoggle %}
+    
+    {% toggle Quant Analyst - CTBC Bank %}
+
+    {% endtoggle %}
+
 {% endtoggle %}
 
 {% toggle 🌱 My Life %}
@@ -31,19 +29,6 @@ Statement
 - Example 2
 - Example 3
 
-{% toggle 🌱 My Life %}
-- sub_item 1
-- sub_item 2
-- sub_item 3
-- sub_item 4
-{% endtoggle %}
-
-{% toggle 🌱 My Life open %}
-- sub_item 1
-- sub_item 2
-- sub_item 3
-- sub_item 4
-{% endtoggle %}
 {% endtoggle %}
 
 。熱衷於 **C++** 及各種軟體技術，喜歡深入理解系統運作、效能優化與底層設計。非軟體相關科系出身，畢業後致力於從上到下補齊必備的軟體相關知識，目前在一家新創 Hedge Fund 擔任軟體工程師，我想在這邊放置一些我的學習筆記，試圖用淺白的中文將軟體知識寫出來，讓和我一樣非本科的人更容易跨入軟體的世界。
