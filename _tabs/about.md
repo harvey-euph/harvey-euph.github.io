@@ -12,6 +12,12 @@ This little corner of the internet is where I share pieces of my life, my career
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
 
 {% toggle 💼 My Career %}
+{% toggle 📝 Summary open %}
+- Proficient in **C++ programming**, supported by a strong background in **mathematics** and **finance**.  
+- Dedicated to continuously improving technical expertise, with hands-on experience in **debugging techniques**, **performance optimization tools**, and modern **C++ features**.  
+- Strong interest in **low-latency systems** and **market-making**, seeking to further develop skills and pursue opportunities in these areas.
+{% endtoggle %}
+
 {% toggle Aargo Trade — Quantitative Developer (Jun 2024 – Present) %}
 **Key Contributions**
 - Designed and maintained **trading infrastructure** and **market data systems**, integrating with multiple brokers and implementing advanced order types.
