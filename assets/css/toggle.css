@@ -40,7 +40,7 @@ html {
   }
 }
 
-/* === Toggle 元件 === */
+/* === Toggle 元件樣式 === */
 .toggle {
   border: 1px solid var(--toggle-border) !important;
   border-radius: 0.75rem;
@@ -62,8 +62,8 @@ html {
   font-weight: bold;
   color: var(--toggle-text) !important;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 .toggle-header::before {
@@ -73,7 +73,7 @@ html {
   transition: transform 0.2s ease;
 }
 
-.toggle.open > .toggle-header::before {
+.toggle.open .toggle-header::before {
   transform: rotate(90deg);
 }
 
@@ -81,11 +81,28 @@ html {
   background-color: var(--toggle-hover) !important;
 }
 
-/* 內容區，max-height 與 padding 全由 JS 動態控制 */
+.toggle-left {
+  flex: 1;
+}
+
+.toggle-right {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: var(--toggle-text);
+  opacity: 0.8;
+  margin-left: 1em;
+  white-space: nowrap;
+}
+
 .toggle-content {
   max-height: 0;
   overflow: hidden;
   padding: 0 1em;
   color: var(--toggle-text) !important;
-  transition: max-height 0.28s ease, padding 0.28s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.toggle.open .toggle-content {
+  max-height: 500px;
+  padding: 0.6em 1em 1em;
 }

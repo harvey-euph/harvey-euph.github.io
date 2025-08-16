@@ -11,19 +11,19 @@ This little corner of the internet is where I share pieces of my life, my career
 
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
 
-{% toggle 💼 My Career %}
+{% toggle :< 💼 My Career %}
 
-{% toggle Quant Developer - Aargo Trade (2024/6–Present) %}
+{% toggle :< Quant Developer - Aargo Trade :> (2024/6–Present) %}
     C++ Development and Trading Related Programming, including Order and Execution Management, High Level Market data process, FIX protocol.
 {% endtoggle %}
 
-{% toggle Quant Analyst - CTBC Bank (2022/4–2023/10) %}
+{% toggle :< Quant Analyst Intern - CTBC Bank :> (2022/4–2023/10) :o %}
     Financial Derivatives Pricing on FX and Fixed Income product.
 {% endtoggle %}
 
 {% endtoggle %}
 
-{% toggle 🌱 My Life %}
+{% toggle :< 🌱 My Life %}
 Statement
 - Example 1
 - Example 2

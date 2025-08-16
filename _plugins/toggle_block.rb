@@ -1,10 +1,8 @@
 module Jekyll
   class ToggleBlock < Liquid::Block
-    def initialize(tag_name, markup, tokens)
+    def initialize(tag_name, title, tokens)
       super
-      args = markup.strip.split(/\s+/)
-      @open = args.delete('open')
-      @title = args.join(' ')
+      @title_raw = title.strip
     end
 
     def render(context)
@@ -14,13 +12,41 @@ module Jekyll
       site = context.registers[:site]
       converter = site.find_converter_instance(Jekyll::Converters::Markdown)
 
-      content_html = converter.convert(super.strip)
+      content = super.strip
+      content_html = converter.convert(content)
 
-      open_class = @open ? ' open' : ''
+      left_text = ""
+      right_text = ""
+      is_open = false
+
+      scanner = @title_raw.scan(/(:[<>o])\s*([^:]+)?/)
+
+      if scanner.empty?
+        # 沒有任何 tag → 全部當成左側
+        left_text = @title_raw
+      else
+        scanner.each do |tag, text|
+          case tag
+          when ":<"
+            left_text = text.to_s.strip
+          when ":>"
+            right_text = text.to_s.strip
+          when ":o"
+            is_open = true
+          end
+        end
+      end
+
+      header_html = <<~HTML
+        <div class="toggle-header">
+          <span class="toggle-left">#{left_text}</span>
+          <span class="toggle-right">#{right_text}</span>
+        </div>
+      HTML
 
       <<~HTML
-      <div class="toggle#{open_class}">
-        <div class="toggle-header">#{@title}</div>
+      <div class="toggle#{is_open ? " open" : ""}">
+        #{header_html}
         <div class="toggle-content">
           #{content_html}
         </div>
