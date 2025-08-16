@@ -42,35 +42,21 @@ C++, VBA, interest rate modeling, implied volatility modeling
 {% toggle 🌱 My Life %}
 
 {% toggle ✅ DONE %}
-{% toggle Past %}
-- JLPT N1 Passed
-{% endtoggle %}
-
-{% toggle Current Year %}
-- First time snowboarding (at Japan)
-{% endtoggle %}
-
-{% toggle Within 3 Years %}
-- 學會彈鋼琴一首完整曲子
-- 參與開源專案並有 PR 被合併
-{% endtoggle %}
-
-{% toggle Long Term %}
-{% endtoggle %}
+- Past
+    - JLPT N1 Passed
+- Current Year
+    - First time snowboarding (at Japan)
+<!-- - Within 3 Years -->
+<!-- - Long Term -->
 {% endtoggle %}
 
 {% toggle 📝 TODO %}
-{% toggle Current Year open %}
-- Start taking A Acid
-{% endtoggle %}
-
-{% toggle Within 3 Years %}
-- Pass CASI Level 1 Snowboard Instructor Exam (at Japan)
-- Complete APF A License Course (at Australia)
-{% endtoggle %}
-
-{% toggle Long Term %}
-{% endtoggle %}
+- Current Year
+    - Start taking A Acid
+- Within 3 Years
+    - Pass CASI Level 1 Snowboard Instructor Exam (at Japan)
+    - Complete APF A License Course (at Australia)
+<!-- - Long Term -->
 {% endtoggle %}
 
 {% endtoggle %}
