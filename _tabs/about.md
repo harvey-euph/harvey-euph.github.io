@@ -50,7 +50,7 @@ C++, VBA, interest rate modeling, implied volatility modeling
 <!-- - Long Term -->
 {% endtoggle %}
 
-{% toggle 📝 TODO %}
+{% toggle 📌 TODO %}
 - Current Year
     - Start taking A Acid
 - Within 3 Years
@@ -61,17 +61,17 @@ C++, VBA, interest rate modeling, implied volatility modeling
 
 {% endtoggle %}
 
-{% toggle 🌱 My Notes & Self-Learnings %}
+{% toggle 💡 My Notes & Self-Learnings %}
 
-我平常會挑選對工作與底層理解有幫助的技術書籍閱讀，邊讀邊整理心得與重點筆記，希望幫助記憶，也讓別人更容易入門這些技術。 
+I usually select technical materials that help me strengthen my work-related skills and deepen my understanding of computer systems. While reading, I take notes and summarize key points to reinforce memory and make it easier for others to get started with these topics.  
 
-{% toggle From books %}
+{% toggle From Books %}
 
-- [Dynamic Hedging — Nassim Nicholas Taleb](/posts/note-dynamic-hedging)
-:探討 **期權交易風險管理** 實務的經典作品，適合對量化交易與期權避險策略有興趣的人。  
+- [Dynamic Hedging — Nassim Nicholas Taleb](/posts/note-dynamic-hedging)  
+: A classic work on **risk management in options trading**, covering practical hedging strategies and insights into nonlinear financial instruments. Highly recommended for those interested in quantitative trading and options risk management.  
 
-- [Learning eBPF — Liz Rice](/posts/note-learning-ebpf)
-: NaN
+- [Learning eBPF — Liz Rice](/posts/note-learning-ebpf)  
+: A hands-on introduction to **Extended Berkeley Packet Filter (eBPF)**, focusing on how to safely extend kernel functionality, monitor systems, and build high-performance observability tools.  
 
 {% endtoggle %}
 
