@@ -13,12 +13,18 @@ Take your time, look around, and discover whichever part of my story sparks your
 
 {% toggle 💼 My Career %}
 
-{% toggle Quant Developer - Aargo Trade (2024/6–Present) %}
-    C++ Development and Trading Related Programming, including Order and Execution Management, High Level Market data process, FIX protocol.
+{% toggle **Aargo Trade**, Quantitative Developer (2024/6–Present) %}
+- Develop and maintain trading infrastructure and market data systems, integrate with various brokers, and implement advanced order types.
+- Analyze and optimize the performance of systems by identifying bottlenecks and inefficiencies in the code, and implementing effective solutions.
+- Leveraged knowledge in Order and Execution Management System, Orderbook processing, FIX Protocol network programming.
+- Tools and Skills: C++, gdb, git, eBPF, python, shell script, PostgreSQL, tcpdump, redis.
 {% endtoggle %}
 
-{% toggle Quant Analyst Intern - CTBC Bank (2022/4–2023/10) %}
-    Financial Derivatives Pricing on FX and Fixed Income product.
+{% toggle **CTBC Bank**, Quantitative Analyst Intern (2022/4–2023/10) %}
+- Studied FX and fixed income derivatives, including their basics, mathematics models and theories, and applied to different pricing methods.
+- Developed Excel add-Ins using C++ with QuantLib for derivatives pricing.
+- Built market-making system for forex market, including price generating strategy, order processing, and hedging policies.
+- Tools and Skills: C++, VBA, interest rate and implied vol modeling.
 {% endtoggle %}
 
 {% endtoggle %}
