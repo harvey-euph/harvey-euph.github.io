@@ -76,9 +76,8 @@ I usually select technical materials that help me strengthen my work-related ski
 {% endtoggle %}
 
 {% toggle From other sources %}
-
+- No
 {% endtoggle %}
-
 
 {% endtoggle %}
 
