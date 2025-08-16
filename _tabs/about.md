@@ -40,10 +40,40 @@ C++, VBA, interest rate modeling, implied volatility modeling
 {% endtoggle %}
 
 {% toggle 🌱 My Life %}
-Statement
-- Example 1
-- Example 2
-- Example 3
+
+{% toggle ✅ DONE %}
+{% toggle 今年 %}
+- 完成 CFA Level I
+- 跑完半程馬拉松
+{% endtoggle %}
+
+{% toggle 三年內 %}
+- 完成研究所學業
+- 學會彈鋼琴一首完整曲子
+{% endtoggle %}
+
+{% toggle 五年內 %}
+- 存到第一桶金
+- 出版一篇技術部落格
+{% endtoggle %}
+{% endtoggle %}
+
+{% toggle 📝 TODO %}
+{% toggle 今年 %}
+- 完成一篇量化金融研究報告
+- 參加一場黑客松比賽
+{% endtoggle %}
+
+{% toggle 三年內 %}
+- 學會日文 N2
+- 寫一個自己的交易系統 Prototype
+{% endtoggle %}
+
+{% toggle 五年內 %}
+- 建立個人品牌網站
+- 旅行歐洲至少三個國家
+{% endtoggle %}
+{% endtoggle %}
 
 {% endtoggle %}
 
