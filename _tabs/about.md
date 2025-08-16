@@ -42,42 +42,35 @@ C++, VBA, interest rate modeling, implied volatility modeling
 {% toggle 🌱 My Life %}
 
 {% toggle ✅ DONE %}
-  {% toggle Past %}
-  - 完成 CFA Level I
-  - 跑完半程馬拉松
-  {% endtoggle %}
+{% toggle Past %}
+- JLPT N1 Passed
+{% endtoggle %}
 
-  {% toggle Current Year %}
-  - 完成研究所畢業論文
-  - 寫完第一篇技術部落格
-  {% endtoggle %}
+{% toggle Current Year %}
+- First time snowboarding (at Japan)
+{% endtoggle %}
 
-  {% toggle Within 3 Years %}
-  - 學會彈鋼琴一首完整曲子
-  - 參與開源專案並有 PR 被合併
-  {% endtoggle %}
+{% toggle Within 3 Years %}
+- 學會彈鋼琴一首完整曲子
+- 參與開源專案並有 PR 被合併
+{% endtoggle %}
 
-  {% toggle Long Term %}
-  - 存到第一桶金
-  - 出版一本技術相關小書
-  {% endtoggle %}
+{% toggle Long Term %}
+{% endtoggle %}
 {% endtoggle %}
 
 {% toggle 📝 TODO %}
-  {% toggle Current Year open %}
-  - 完成一篇量化金融研究報告
-  - 參加一場黑客松比賽
-  {% endtoggle %}
+{% toggle Current Year open %}
+- Start taking A Acid
+{% endtoggle %}
 
-  {% toggle Within 3 Years %}
-  - 學會日文 N2
-  - 建立自己的交易系統 Prototype
-  {% endtoggle %}
+{% toggle Within 3 Years %}
+- Pass CASI Level 1 Snowboard Instructor Exam (at Japan)
+- Complete APF A License Course (at Australia)
+{% endtoggle %}
 
-  {% toggle Long Term %}
-  - 建立個人品牌網站
-  - 旅行歐洲至少三個國家
-  {% endtoggle %}
+{% toggle Long Term %}
+{% endtoggle %}
 {% endtoggle %}
 
 {% endtoggle %}
