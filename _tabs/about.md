@@ -12,21 +12,25 @@ This little corner of the internet is where I share pieces of my life, my career
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
 
 {% toggle 💼 My Career %}
+{% toggle Aargo Trade — Quantitative Developer (Jun 2024 – Present) %}
+**Key Contributions**
+- Designed and maintained **trading infrastructure** and **market data systems**, integrating with multiple brokers and implementing advanced order types.
+- Conducted **performance profiling and optimization**, identifying bottlenecks and applying targeted improvements.
+- Developed expertise in **Order & Execution Management Systems**, **Order Book processing**, and **FIX Protocol** network programming.
 
-{% toggle **Aargo Trade**, Quantitative Developer (2024/6–Present) %}
-- Develop and maintain trading infrastructure and market data systems, integrate with various brokers, and implement advanced order types.
-- Analyze and optimize the performance of systems by identifying bottlenecks and inefficiencies in the code, and implementing effective solutions.
-- Leveraged knowledge in Order and Execution Management System, Orderbook processing, FIX Protocol network programming.
-- Tools and Skills: C++, gdb, git, eBPF, python, shell script, PostgreSQL, tcpdump, redis.
+**Technologies**  
+C++, gdb, git, eBPF, Python, Shell Script, PostgreSQL, tcpdump, Redis
 {% endtoggle %}
 
-{% toggle **CTBC Bank**, Quantitative Analyst Intern (2022/4–2023/10) %}
-- Studied FX and fixed income derivatives, including their basics, mathematics models and theories, and applied to different pricing methods.
-- Developed Excel add-Ins using C++ with QuantLib for derivatives pricing.
-- Built market-making system for forex market, including price generating strategy, order processing, and hedging policies.
-- Tools and Skills: C++, VBA, interest rate and implied vol modeling.
-{% endtoggle %}
+{% toggle CTBC Bank — Quantitative Analyst Intern (Apr 2022 – Oct 2023) %}
+**Key Contributions**
+- Researched **FX** and **fixed income derivatives**, covering fundamentals, mathematical models, and pricing methodologies.
+- Built **Excel add-ins** using C++ and QuantLib for derivatives pricing.
+- Developed a **forex market-making system** including price generation strategies, order processing, and hedging logic.
 
+**Technologies**  
+C++, VBA, interest rate modeling, implied volatility modeling
+{% endtoggle %}
 {% endtoggle %}
 
 {% toggle 🌱 My Life %}
