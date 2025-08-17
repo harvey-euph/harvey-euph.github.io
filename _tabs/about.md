@@ -12,14 +12,12 @@ This little corner of the internet is where I share pieces of my life, my career
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
 
 {% toggle 💼 My Career %}
-{% toggle Summary open %}
 - Proficient in **C++ programming**, supported by a strong background in **mathematics** and **quant finance**.  
 - Dedicated to continuously improving technical expertise, with hands-on experience in **debugging techniques**, **performance optimization tools**, and **modern C++** features  
 - Strong interest in **low-latency systems** and **market-making**, seeking to further develop skills and pursue opportunities in these areas.
-{% endtoggle %}
 
 {% toggle Aargo Trade — Quantitative Developer (Jun 2024 – Present) %}
-**Key Contributions**
+**Achievements**
 - Designed and maintained **trading infrastructure** and **market data systems**, integrating with multiple brokers and implementing advanced order types.
 - Conducted **performance profiling and optimization**, identifying bottlenecks and applying targeted improvements.
 - Developed expertise in **Order & Execution Management Systems**, **Order Book processing**, and **FIX Protocol** network programming.
@@ -29,7 +27,7 @@ C++, gdb, git, eBPF, Python, Shell Script, PostgreSQL, tcpdump, Redis
 {% endtoggle %}
 
 {% toggle CTBC Bank — Quantitative Analyst Intern (Apr 2022 – Oct 2023) %}
-**Key Contributions**
+**Achievements**
 - Researched **FX** and **fixed income derivatives**, covering fundamentals, mathematical models, and pricing methodologies.
 - Built **Excel add-ins** using C++ and QuantLib for derivatives pricing.
 - Developed a **forex market-making system** including price generation strategies, order processing, and hedging logic.
@@ -45,7 +43,7 @@ C++, VBA, interest rate modeling, implied volatility modeling
 - Past
     - JLPT N1 Passed
 - Current Year
-    - First time snowboarding (at Japan)
+    - First time snowboarding (in Japan)
 <!-- - Within 3 Years -->
 <!-- - Long Term -->
 {% endtoggle %}
@@ -54,8 +52,8 @@ C++, VBA, interest rate modeling, implied volatility modeling
 - Current Year
     - Start taking A Acid
 - Within 3 Years
-    - Pass CASI Level 1 Snowboard Instructor Exam (at Japan)
-    - Complete APF A License Course (at Australia)
+    - Pass CASI Level 1 Snowboard Instructor Exam (in Japan)
+    - Complete APF A License Course (in Australia)
 <!-- - Long Term -->
 {% endtoggle %}
 
@@ -63,7 +61,7 @@ C++, VBA, interest rate modeling, implied volatility modeling
 
 {% toggle 💡 My Notes & Self-Learnings %}
 
-I usually select technical materials that help me strengthen my work-related skills and deepen my understanding of computer systems. While reading, I take notes and summarize key points to reinforce memory and make it easier for others to get started with these topics.  
+I usually select technical materials that help me strengthen my work-related skills and deepen my understanding of computer systems and financial markets. While reading, I take notes and summarize key points to reinforce memory and make it easier for others to get started with these topics.  
 
 {% toggle From Books %}
 
