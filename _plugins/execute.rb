@@ -35,10 +35,7 @@ module Jekyll
           <button class="execute-toggle" type="button" title="顯示/隱藏執行結果">
             <span class="execute-arrow">▶</span>
           </button>
-          <pre><code class="language-#{@language}">#{escape_html(code_content)}</code></pre>
-        </div>
-        <div class="execute-output">
-          <pre><code>#{escape_html(output_content)}</code></pre>
+          <pre><code class="language-#{@language}">#{escape_html(code_content)}<span class="execute-output">#{output_content.empty? ? '' : "\n\n#{escape_html(output_content)}"}</span></code></pre>
         </div>
       </div>
       HTML

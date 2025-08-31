@@ -11,25 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!toggle || !output || !arrow) return;
 
     // 基本動畫設定
+    output.style.transition = "opacity 0.3s ease, max-height 0.3s ease";
     output.style.overflow = "hidden";
-    output.style.transition = "max-height 0.3s ease, opacity 0.3s ease";
     arrow.style.transition = "transform 0.2s ease";
 
     // 初始化狀態
     if (block.classList.contains("open")) {
-      output.style.maxHeight = output.scrollHeight + "px";
       output.style.opacity = "1";
+      output.style.maxHeight = "none";
       arrow.style.transform = "rotate(90deg)";
-      // 展開完成後設為 none，讓內容能自動調整
-      output.addEventListener("transitionend", function te(e) {
-        if (e.propertyName === "max-height" && block.classList.contains("open")) {
-          output.style.maxHeight = "none";
-          output.removeEventListener("transitionend", te);
-        }
-      });
     } else {
-      output.style.maxHeight = "0px";
       output.style.opacity = "0";
+      output.style.maxHeight = "0";
+      output.style.display = "none";
       arrow.style.transform = "rotate(0deg)";
     }
 
@@ -42,46 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isOpening) {
         block.classList.add("open");
         arrow.style.transform = "rotate(90deg)";
+        output.style.display = "inline";
         output.style.opacity = "1";
-        
-        // 確保能做動畫
-        if (getComputedStyle(output).maxHeight === "none") {
-          output.style.maxHeight = output.scrollHeight + "px";
-        }
-        
-        requestAnimationFrame(() => {
-          output.style.maxHeight = output.scrollHeight + "px";
-        });
-
-        // 展開完成後設為 none
-        const onOpenEnd = (ev) => {
-          if (ev.propertyName === "max-height" && block.classList.contains("open")) {
-            output.style.maxHeight = "none";
-            output.removeEventListener("transitionend", onOpenEnd);
-          }
-        };
-        output.addEventListener("transitionend", onOpenEnd);
+        output.style.maxHeight = "none";
       } else {
-        // 收合
-        if (getComputedStyle(output).maxHeight === "none") {
-          output.style.maxHeight = output.scrollHeight + "px";
-          // 強制回流
-          output.offsetHeight;
-        }
-        
         block.classList.remove("open");
         arrow.style.transform = "rotate(0deg)";
-        output.style.maxHeight = "0px";
         output.style.opacity = "0";
+        output.style.maxHeight = "0";
+        // 延遲隱藏以配合動畫
+        setTimeout(() => {
+          if (!block.classList.contains("open")) {
+            output.style.display = "none";
+          }
+        }, 300);
       }
     });
-
-    // 處理內容動態變化
-    const ro = new ResizeObserver(() => {
-      if (block.classList.contains("open") && getComputedStyle(output).maxHeight === "none") {
-        // 內容已展開且設為 none，會自動調整
-      }
-    });
-    ro.observe(output);
   });
 });

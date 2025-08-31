@@ -81,37 +81,15 @@
   color: #e6edf3;
 }
 
+/* 輸出結果樣式 - 在同一個 code 標籤內 */
 .execute-output {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  margin-top: 0.5rem;
-}
-
-.execute-output pre {
-  margin: 0;
-  padding: 16px;
-  background-color: #f6f8fa;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  overflow-x: auto;
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-[data-mode='dark'] .execute-output pre {
-  background-color: #0d1117;
-  border-color: #21262d;
-}
-
-.execute-output code {
   color: #656d76;
-  background: transparent;
-  padding: 0;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
 }
 
-[data-mode='dark'] .execute-output code {
+[data-mode='dark'] .execute-output {
   color: #8b949e;
 }
 
@@ -122,4 +100,5 @@
 
 .execute-block.open .execute-output {
   opacity: 1;
+  display: inline;
 }
