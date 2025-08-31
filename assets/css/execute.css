@@ -1,46 +1,156 @@
-.execute-block pre {
-  background-color: #1e1e1e;
-  color: #d4d4d4;
-  padding: 1em;
-  border-radius: 0.5em;
-  overflow-x: auto;
-  margin: 0;
+/* 在原有的 CSS 中新增執行區塊的變數 */
+html {
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      /* 原有的 toggle 變數... */
+      --execute-bg: #f8fafc;
+      --execute-border: #e2e8f0;
+      --execute-code-bg: #ffffff;
+      --execute-output-bg: #f1f5f9;
+      --execute-text: #334155;
+      --execute-text-muted: #64748b;
+      --execute-button-hover: #e2e8f0;
+    }
+    &[data-mode='dark'] {
+      /* 原有的 toggle 變數... */
+      --execute-bg: #0f172a;
+      --execute-border: #334155;
+      --execute-code-bg: #1e293b;
+      --execute-output-bg: #0f172a;
+      --execute-text: #e2e8f0;
+      --execute-text-muted: #94a3b8;
+      --execute-button-hover: #334155;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      /* 原有的 toggle 變數... */
+      --execute-bg: #0f172a;
+      --execute-border: #334155;
+      --execute-code-bg: #1e293b;
+      --execute-output-bg: #0f172a;
+      --execute-text: #e2e8f0;
+      --execute-text-muted: #94a3b8;
+      --execute-button-hover: #334155;
+    }
+    &[data-mode='light'] {
+      /* 原有的 toggle 變數... */
+      --execute-bg: #f8fafc;
+      --execute-border: #e2e8f0;
+      --execute-code-bg: #ffffff;
+      --execute-output-bg: #f1f5f9;
+      --execute-text: #334155;
+      --execute-text-muted: #64748b;
+      --execute-button-hover: #e2e8f0;
+    }
+  }
 }
 
-.execute-toggle {
-  border: 1px solid #444;
-  border-radius: 0.5em;
-  margin-top: 0.5em;
+/* === Execute Block 元件 === */
+.execute-block {
+  border: 1px solid var(--execute-border);
+  border-radius: 0.5rem;
+  background-color: var(--execute-bg);
   overflow: hidden;
+  margin: 1.5em 0;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
 .execute-header {
-  cursor: pointer;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  background-color: #2c2c2c;
-  color: #fff;
+  border-bottom: 1px solid var(--execute-border);
+  background-color: var(--execute-code-bg);
 }
 
-.execute-header::before {
-  content: "▶";
-  margin-right: 0.5em;
+.execute-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--execute-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.execute-toggle:hover {
+  background-color: var(--execute-button-hover);
+}
+
+.execute-arrow {
   display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.75rem;
   transition: transform 0.2s ease;
 }
 
-.execute-toggle.open > .execute-header::before {
+.execute-label {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.execute-code {
+  background-color: var(--execute-code-bg);
+  padding: 0;
+}
+
+.execute-code pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.execute-code code {
+  color: var(--execute-text);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  background: transparent;
+  padding: 0;
+}
+
+.execute-output {
+  background-color: var(--execute-output-bg);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.execute-output-label {
+  padding: 0.5rem 1rem 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--execute-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.execute-output pre {
+  margin: 0;
+  padding: 0.5rem 1rem 1rem;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.execute-output code {
+  color: var(--execute-text);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  background: transparent;
+  padding: 0;
+}
+
+/* 展開狀態的樣式調整 */
+.execute-block.open .execute-arrow {
   transform: rotate(90deg);
 }
 
-.execute-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.28s ease, padding 0.28s ease;
-}
-
-.execute-content pre {
-  margin: 0;
-  padding: 1em;
-  background-color: #1e1e1e;
+.execute-block.open .execute-output {
+  opacity: 1;
 }

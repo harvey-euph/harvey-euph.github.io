@@ -1,35 +1,87 @@
+// 在原有的 toggle.js 中新增，或放在 execute-block.js
 document.addEventListener("DOMContentLoaded", function () {
-  const toggles = document.querySelectorAll(".execute-toggle");
-  toggles.forEach(toggle => {
-    const header = toggle.querySelector(":scope > .execute-header");
-    const content = toggle.querySelector(":scope > .execute-content");
-    if (!header || !content) return;
+  const executeBlocks = document.querySelectorAll(".execute-block");
+  if (!executeBlocks.length) return;
 
-    content.style.overflow = "hidden";
-    content.style.transition = "max-height 0.28s ease";
-    content.style.maxHeight = "0px";
+  executeBlocks.forEach(function (block) {
+    const toggle = block.querySelector(".execute-toggle");
+    const output = block.querySelector(".execute-output");
+    const arrow = block.querySelector(".execute-arrow");
+    
+    if (!toggle || !output || !arrow) return;
 
-    header.addEventListener("click", function () {
-      const isOpening = !toggle.classList.contains("open");
-      if (isOpening) {
-        toggle.classList.add("open");
-        requestAnimationFrame(() => {
-          content.style.maxHeight = content.scrollHeight + "px";
-        });
-        content.addEventListener("transitionend", function te(e) {
-          if (e.propertyName === "max-height" && toggle.classList.contains("open")) {
-            content.style.maxHeight = "none";
-            content.removeEventListener("transitionend", te);
-          }
-        });
-      } else {
-        if (getComputedStyle(content).maxHeight === "none") {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.offsetHeight; // force reflow
+    // 基本動畫設定
+    output.style.overflow = "hidden";
+    output.style.transition = "max-height 0.3s ease, opacity 0.3s ease";
+    arrow.style.transition = "transform 0.2s ease";
+
+    // 初始化狀態
+    if (block.classList.contains("open")) {
+      output.style.maxHeight = output.scrollHeight + "px";
+      output.style.opacity = "1";
+      arrow.style.transform = "rotate(90deg)";
+      // 展開完成後設為 none，讓內容能自動調整
+      output.addEventListener("transitionend", function te(e) {
+        if (e.propertyName === "max-height" && block.classList.contains("open")) {
+          output.style.maxHeight = "none";
+          output.removeEventListener("transitionend", te);
         }
-        toggle.classList.remove("open");
-        content.style.maxHeight = "0px";
+      });
+    } else {
+      output.style.maxHeight = "0px";
+      output.style.opacity = "0";
+      arrow.style.transform = "rotate(0deg)";
+    }
+
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpening = !block.classList.contains("open");
+
+      if (isOpening) {
+        block.classList.add("open");
+        arrow.style.transform = "rotate(90deg)";
+        output.style.opacity = "1";
+        
+        // 確保能做動畫
+        if (getComputedStyle(output).maxHeight === "none") {
+          output.style.maxHeight = output.scrollHeight + "px";
+        }
+        
+        requestAnimationFrame(() => {
+          output.style.maxHeight = output.scrollHeight + "px";
+        });
+
+        // 展開完成後設為 none
+        const onOpenEnd = (ev) => {
+          if (ev.propertyName === "max-height" && block.classList.contains("open")) {
+            output.style.maxHeight = "none";
+            output.removeEventListener("transitionend", onOpenEnd);
+          }
+        };
+        output.addEventListener("transitionend", onOpenEnd);
+      } else {
+        // 收合
+        if (getComputedStyle(output).maxHeight === "none") {
+          output.style.maxHeight = output.scrollHeight + "px";
+          // 強制回流
+          output.offsetHeight;
+        }
+        
+        block.classList.remove("open");
+        arrow.style.transform = "rotate(0deg)";
+        output.style.maxHeight = "0px";
+        output.style.opacity = "0";
       }
     });
+
+    // 處理內容動態變化
+    const ro = new ResizeObserver(() => {
+      if (block.classList.contains("open") && getComputedStyle(output).maxHeight === "none") {
+        // 內容已展開且設為 none，會自動調整
+      }
+    });
+    ro.observe(output);
   });
 });
