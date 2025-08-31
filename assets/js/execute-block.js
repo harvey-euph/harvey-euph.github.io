@@ -1,56 +1,75 @@
-// 在原有的 toggle.js 中新增，或放在 execute-block.js
 document.addEventListener("DOMContentLoaded", function () {
-  const executeBlocks = document.querySelectorAll(".execute-block");
-  if (!executeBlocks.length) return;
+  const execs = document.querySelectorAll(".exec");
+  if (!execs.length) return;
 
-  executeBlocks.forEach(function (block) {
-    const toggle = block.querySelector(".execute-toggle");
-    const output = block.querySelector(".execute-output");
-    const arrow = block.querySelector(".execute-arrow");
-    
-    if (!toggle || !output || !arrow) return;
+  execs.forEach(function (exec) {
+    const button = exec.querySelector(".exec-button");
+    const output = exec.querySelector(".exec-output");
+    if (!button || !output) return;
 
-    // 基本動畫設定
-    output.style.transition = "opacity 0.3s ease, max-height 0.3s ease";
+    // 初始隱藏 output
+    output.style.display = "none";
     output.style.overflow = "hidden";
-    arrow.style.transition = "transform 0.2s ease";
+    output.style.transition = "max-height 0.28s ease, padding 0.28s ease";
 
-    // 初始化狀態
-    if (block.classList.contains("open")) {
-      output.style.opacity = "1";
-      output.style.maxHeight = "none";
-      arrow.style.transform = "rotate(90deg)";
-    } else {
-      output.style.opacity = "0";
-      output.style.maxHeight = "0";
-      output.style.display = "none";
-      arrow.style.transform = "rotate(0deg)";
-    }
+    // 初始 max-height 為 0
+    output.style.maxHeight = "0px";
+    output.style.padding = "0";
 
-    toggle.addEventListener("click", function (e) {
-      e.preventDefault();
+    button.addEventListener("click", function (e) {
       e.stopPropagation();
 
-      const isOpening = !block.classList.contains("open");
+      const isHidden = output.style.display === "none";
 
-      if (isOpening) {
-        block.classList.add("open");
-        arrow.style.transform = "rotate(90deg)";
-        output.style.display = "inline";
-        output.style.opacity = "1";
-        output.style.maxHeight = "none";
-      } else {
-        block.classList.remove("open");
-        arrow.style.transform = "rotate(0deg)";
-        output.style.opacity = "0";
-        output.style.maxHeight = "0";
-        // 延遲隱藏以配合動畫
-        setTimeout(() => {
-          if (!block.classList.contains("open")) {
-            output.style.display = "none";
+      if (isHidden) {
+        // 顯示 output
+        output.style.display = "block";
+        // 先確保不是 none，才能動畫
+        requestAnimationFrame(() => {
+          output.style.maxHeight = output.scrollHeight + "px";
+          output.style.padding = "1em 0";  // 添加一些 padding 讓它看起來接在下方
+        });
+
+        // 展開完成後設為 none，讓內容自適應
+        const onOpenEnd = (ev) => {
+          if (ev.propertyName === "max-height" && output.style.display === "block") {
+            output.style.maxHeight = "none";
+            output.removeEventListener("transitionend", onOpenEnd);
           }
-        }, 300);
+        };
+        output.addEventListener("transitionend", onOpenEnd);
+      } else {
+        // 隱藏 output
+        // 若目前是 none，先設為實際高度
+        if (getComputedStyle(output).maxHeight === "none") {
+          output.style.maxHeight = output.scrollHeight + "px";
+          // 強制回流
+          output.offsetHeight;
+        }
+        output.style.maxHeight = "0px";
+        output.style.padding = "0";
+
+        // 收合完成後完全隱藏
+        const onCloseEnd = (ev) => {
+          if (ev.propertyName === "max-height" && output.style.maxHeight === "0px") {
+            output.style.display = "none";
+            output.removeEventListener("transitionend", onCloseEnd);
+          }
+        };
+        output.addEventListener("transitionend", onCloseEnd);
       }
     });
+
+    // ResizeObserver 確保 output 展開時高度自適應
+    const ro = new ResizeObserver(() => {
+      if (output.style.display === "block" && getComputedStyle(output).maxHeight === "none") {
+        // 若內容變化，暫時重設 max-height 以自適應
+        output.style.maxHeight = output.scrollHeight + "px";
+        requestAnimationFrame(() => {
+          output.style.maxHeight = "none";
+        });
+      }
+    });
+    ro.observe(output);
   });
 });

@@ -1,168 +1,91 @@
-/* === Execute Block 元件 === */
-.execute-block {
-  margin: 1rem 0;
+html {
+  @media (prefers-color-scheme: light) {
+    &:not([data-mode]),
+    &[data-mode='light'] {
+      --exec-bg: #f9fafb;
+      --exec-border: #e5e7eb;
+      --exec-text: #111827;
+      --exec-button-bg: #e5e7eb;
+      --exec-button-hover: #d1d5db;
+      --exec-output-bg: #ffffff;
+    }
+    &[data-mode='dark'] {
+      --exec-bg: #1a1d24;
+      --exec-border: #2a2f3a;
+      --exec-text: #e5e7eb;
+      --exec-button-bg: #2a2f3a;
+      --exec-button-hover: #3b4252;
+      --exec-output-bg: #0f1115;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not([data-mode]),
+    &[data-mode='dark'] {
+      --exec-bg: #1a1d24;
+      --exec-border: #2a2f3a;
+      --exec-text: #e5e7eb;
+      --exec-button-bg: #2a2f3a;
+      --exec-button-hover: #3b4252;
+      --exec-output-bg: #0f1115;
+    }
+    &[data-mode='light'] {
+      --exec-bg: #f9fafb;
+      --exec-border: #e5e7eb;
+      --exec-text: #111827;
+      --exec-button-bg: #e5e7eb;
+      --exec-button-hover: #d1d5db;
+      --exec-output-bg: #ffffff;
+    }
+  }
 }
 
-.execute-code-wrapper {
+/* Exec 元件樣式 */
+.exec {
+  background-color: var(--exec-bg);
+  border: 1px solid var(--exec-border);
+  border-radius: 0.5rem;
+  margin: 1em 0;
+  padding: 1em;
   position: relative;
-  background-color: #f6f8fa;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  overflow: hidden;
 }
 
-/* 暗色主題 */
-@media (prefers-color-scheme: dark) {
-  .execute-code-wrapper {
-    background-color: #161b22;
-    border-color: #30363d;
-  }
-}
-
-[data-mode='dark'] .execute-code-wrapper {
-  background-color: #161b22;
-  border-color: #30363d;
-}
-
-[data-mode='light'] .execute-code-wrapper {
-  background-color: #f6f8fa;
-  border-color: #d0d7de;
-}
-
-.execute-toggle {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(175, 184, 193, 0.2);
-  border: 1px solid rgba(175, 184, 193, 0.4);
-  border-radius: 4px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: all 0.2s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .execute-toggle {
-    background: rgba(110, 118, 129, 0.2);
-    border-color: rgba(110, 118, 129, 0.4);
-  }
-}
-
-[data-mode='dark'] .execute-toggle {
-  background: rgba(110, 118, 129, 0.2);
-  border-color: rgba(110, 118, 129, 0.4);
-}
-
-[data-mode='light'] .execute-toggle {
-  background: rgba(175, 184, 193, 0.2);
-  border-color: rgba(175, 184, 193, 0.4);
-}
-
-.execute-toggle:hover {
-  background: rgba(175, 184, 193, 0.3);
-  border-color: rgba(175, 184, 193, 0.6);
-}
-
-@media (prefers-color-scheme: dark) {
-  .execute-toggle:hover {
-    background: rgba(110, 118, 129, 0.3);
-    border-color: rgba(110, 118, 129, 0.6);
-  }
-}
-
-[data-mode='dark'] .execute-toggle:hover {
-  background: rgba(110, 118, 129, 0.3);
-  border-color: rgba(110, 118, 129, 0.6);
-}
-
-[data-mode='light'] .execute-toggle:hover {
-  background: rgba(175, 184, 193, 0.3);
-  border-color: rgba(175, 184, 193, 0.6);
-}
-
-.execute-arrow {
-  font-size: 10px;
-  color: #656d76;
-  transition: transform 0.2s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .execute-arrow {
-    color: #8b949e;
-  }
-}
-
-[data-mode='dark'] .execute-arrow {
-  color: #8b949e;
-}
-
-[data-mode='light'] .execute-arrow {
-  color: #656d76;
-}
-
-.execute-code-wrapper pre {
+.exec pre {
   margin: 0;
-  padding: 16px;
-  padding-right: 40px; /* 為按鈕留出空間 */
-  overflow-x: auto;
-  background: transparent;
-  font-size: 14px;
-  line-height: 1.45;
-  color: #24292f;
+  background: none !important;  /* 確保嵌入在 exec 內的 code block 樣式一致 */
 }
 
-@media (prefers-color-scheme: dark) {
-  .execute-code-wrapper pre {
-    color: #e6edf3;
-  }
+.exec code {
+  color: var(--exec-text);
 }
 
-[data-mode='dark'] .execute-code-wrapper pre {
-  color: #e6edf3;
+/* 執行按鈕 */
+.exec-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background-color: var(--exec-button-bg);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--exec-text);
+  transition: background-color 0.2s ease;
 }
 
-[data-mode='light'] .execute-code-wrapper pre {
-  color: #24292f;
+.exec-button:hover {
+  background-color: var(--exec-button-hover);
 }
 
-.execute-code-wrapper code {
-  background: transparent;
-  padding: 0;
-}
-
-/* 輸出結果樣式 - 在同一個 code 標籤內，顏色稍微不同 */
-.execute-output {
-  color: #656d76;
-  opacity: 0;
-  display: none;
-  transition: opacity 0.3s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .execute-output {
-    color: #8b949e;
-  }
-}
-
-[data-mode='dark'] .execute-output {
-  color: #8b949e;
-}
-
-[data-mode='light'] .execute-output {
-  color: #656d76;
-}
-
-/* 展開狀態 */
-.execute-block.open .execute-arrow {
-  transform: rotate(90deg);
-}
-
-.execute-block.open .execute-output {
-  opacity: 1;
-  display: inline;
+/* Output 區塊 */
+.exec-output {
+  margin-top: 1em;
+  padding: 1em 0 0 0;  /* 預留空間，讓它看起來直接接在 code 下方 */
+  background-color: var(--exec-output-bg);
+  border-top: 1px dashed var(--exec-border);
+  color: var(--exec-text);
+  overflow: hidden;
+  transition: max-height 0.28s ease, padding 0.28s ease;
 }
