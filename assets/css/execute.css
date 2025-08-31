@@ -1,0 +1,46 @@
+.execute-block pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.execute-toggle {
+  border: 1px solid #444;
+  border-radius: 0.5em;
+  margin-top: 0.5em;
+  overflow: hidden;
+}
+
+.execute-header {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+.execute-header::before {
+  content: "▶";
+  margin-right: 0.5em;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.execute-toggle.open > .execute-header::before {
+  transform: rotate(90deg);
+}
+
+.execute-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s ease, padding 0.28s ease;
+}
+
+.execute-content pre {
+  margin: 0;
+  padding: 1em;
+  background-color: #1e1e1e;
+}
