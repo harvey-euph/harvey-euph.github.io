@@ -31,17 +31,13 @@ module Jekyll
 
       <<~HTML
       <div class="execute-block#{open_class}">
-        <div class="execute-header">
-          <button class="execute-toggle" type="button">
+        <div class="execute-code-wrapper">
+          <button class="execute-toggle" type="button" title="顯示/隱藏執行結果">
             <span class="execute-arrow">▶</span>
-            <span class="execute-label">執行結果</span>
           </button>
-        </div>
-        <div class="execute-code">
           <pre><code class="language-#{@language}">#{escape_html(code_content)}</code></pre>
         </div>
         <div class="execute-output">
-          <div class="execute-output-label">輸出：</div>
           <pre><code>#{escape_html(output_content)}</code></pre>
         </div>
       </div>

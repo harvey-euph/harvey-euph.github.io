@@ -1,152 +1,121 @@
-/* 在原有的 CSS 中新增執行區塊的變數 */
-html {
-  @media (prefers-color-scheme: light) {
-    &:not([data-mode]),
-    &[data-mode='light'] {
-      /* 原有的 toggle 變數... */
-      --execute-bg: #f8fafc;
-      --execute-border: #e2e8f0;
-      --execute-code-bg: #ffffff;
-      --execute-output-bg: #f1f5f9;
-      --execute-text: #334155;
-      --execute-text-muted: #64748b;
-      --execute-button-hover: #e2e8f0;
-    }
-    &[data-mode='dark'] {
-      /* 原有的 toggle 變數... */
-      --execute-bg: #0f172a;
-      --execute-border: #334155;
-      --execute-code-bg: #1e293b;
-      --execute-output-bg: #0f172a;
-      --execute-text: #e2e8f0;
-      --execute-text-muted: #94a3b8;
-      --execute-button-hover: #334155;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    &:not([data-mode]),
-    &[data-mode='dark'] {
-      /* 原有的 toggle 變數... */
-      --execute-bg: #0f172a;
-      --execute-border: #334155;
-      --execute-code-bg: #1e293b;
-      --execute-output-bg: #0f172a;
-      --execute-text: #e2e8f0;
-      --execute-text-muted: #94a3b8;
-      --execute-button-hover: #334155;
-    }
-    &[data-mode='light'] {
-      /* 原有的 toggle 變數... */
-      --execute-bg: #f8fafc;
-      --execute-border: #e2e8f0;
-      --execute-code-bg: #ffffff;
-      --execute-output-bg: #f1f5f9;
-      --execute-text: #334155;
-      --execute-text-muted: #64748b;
-      --execute-button-hover: #e2e8f0;
-    }
-  }
-}
+/* 在原有的 CSS 中移除執行區塊的變數，直接使用 GitHub 風格 */
 
 /* === Execute Block 元件 === */
 .execute-block {
-  border: 1px solid var(--execute-border);
-  border-radius: 0.5rem;
-  background-color: var(--execute-bg);
-  overflow: hidden;
   margin: 1.5em 0;
-  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
 }
 
-.execute-header {
-  border-bottom: 1px solid var(--execute-border);
-  background-color: var(--execute-code-bg);
+.execute-code-wrapper {
+  position: relative;
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+[data-mode='dark'] .execute-code-wrapper {
+  background-color: #161b22;
+  border-color: #30363d;
 }
 
 .execute-toggle {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 0.75rem 1rem;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(175, 184, 193, 0.2);
+  border: 1px solid rgba(175, 184, 193, 0.4);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: var(--execute-text);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+[data-mode='dark'] .execute-toggle {
+  background: rgba(110, 118, 129, 0.2);
+  border-color: rgba(110, 118, 129, 0.4);
 }
 
 .execute-toggle:hover {
-  background-color: var(--execute-button-hover);
+  background: rgba(175, 184, 193, 0.3);
+  border-color: rgba(175, 184, 193, 0.6);
+}
+
+[data-mode='dark'] .execute-toggle:hover {
+  background: rgba(110, 118, 129, 0.3);
+  border-color: rgba(110, 118, 129, 0.6);
 }
 
 .execute-arrow {
-  display: inline-block;
-  margin-right: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 10px;
+  color: #656d76;
   transition: transform 0.2s ease;
 }
 
-.execute-label {
-  flex-grow: 1;
-  text-align: left;
+[data-mode='dark'] .execute-arrow {
+  color: #8b949e;
 }
 
-.execute-code {
-  background-color: var(--execute-code-bg);
-  padding: 0;
-}
-
-.execute-code pre {
+.execute-code-wrapper pre {
   margin: 0;
-  padding: 1rem;
+  padding: 16px;
+  padding-right: 40px; /* 為按鈕留出空間 */
   overflow-x: auto;
   background: transparent;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
-.execute-code code {
-  color: var(--execute-text);
-  font-size: 0.875rem;
-  line-height: 1.5;
+.execute-code-wrapper code {
+  color: #24292f;
   background: transparent;
   padding: 0;
+}
+
+[data-mode='dark'] .execute-code-wrapper code {
+  color: #e6edf3;
 }
 
 .execute-output {
-  background-color: var(--execute-output-bg);
   max-height: 0;
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
-}
-
-.execute-output-label {
-  padding: 0.5rem 1rem 0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--execute-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
 }
 
 .execute-output pre {
   margin: 0;
-  padding: 0.5rem 1rem 1rem;
+  padding: 16px;
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
   overflow-x: auto;
-  background: transparent;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+[data-mode='dark'] .execute-output pre {
+  background-color: #0d1117;
+  border-color: #21262d;
 }
 
 .execute-output code {
-  color: var(--execute-text);
-  font-size: 0.875rem;
-  line-height: 1.4;
+  color: #656d76;
   background: transparent;
   padding: 0;
 }
 
-/* 展開狀態的樣式調整 */
+[data-mode='dark'] .execute-output code {
+  color: #8b949e;
+}
+
+/* 展開狀態 */
 .execute-block.open .execute-arrow {
   transform: rotate(90deg);
 }
