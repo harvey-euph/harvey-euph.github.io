@@ -1,0 +1,224 @@
+---
+title: "學點新技能"
+# description: ""
+date: 2025-08-30 12:00:00 +0800
+categories: [Careers]
+tags: [Tech]
+---
+
+最近公司好像不賺錢開始裁人了，一個尊敬的前輩被裁了，他走後全公司會寫 C++ 的就剩下我 ==
+
+如果繼續賠錢大概是要收攤了，要來學點新東西提升一下自己，打算用我一開始找工作時的技巧: 直接找有興趣的職缺，看 Job Description 要會什麼技能就去學
+
+那兩三個月真的是我學新東西最密集的時期，Docker﹑打 http request 送給交易所訂單﹑計算德撲的勝率 (對，我面過賭博遊戲公司的 SWE)  ... 暫時還想不起來，反正還更多
+
+所以我要來回到這個狀態了，這是第一篇
+
+===============================================================================
+
+有一家公司在招 Trading Desks 的 C++ Low-Latency Engineers，有以下要求: 
+
+- Write modern C++ (C++14/17/20) with deep fluency
+- Understand low-level performance — memory alignment, lock-free data structures, system calls, cache usage
+- Have built or worked on latency-sensitive infrastructure — tick-to-trade pipelines, exchange connectivity, kernel bypass networking (DPDK/Solarflare), multicast
+- Want more impact, more challenge, and a true seat at the table — not just another ticket in the sprint board
+
+================================================================================
+
+
+## 要點總覽 (快速掃描) 
+1. 精通現代 C++ (14/17/20) : template、constexpr、move、RAII、type traits、適當使用 `std::atomic`、`std::memory_order`。
+2. 低延遲基礎: cache 行、對齊 (alignment)、false sharing、prefetch、NUMA、CPU affinity、hugepages、中斷與 syscalls 成本。
+3. 非阻塞/Lock-free: SPSC/MPSC ring buffers、wait-free patterns、幾種常見演算法與陷阱。
+4. 延遲敏感 infra: tick-to-trade pipeline 架構、exchange 接收/送出 (multicast、binary TCP、FIX)、kernel-bypass (DPDK、Solarflare) 基本概念。
+5. 測試與量化: latency histogram、p99/p999、micro-benchmark、`perf`, `perf record`, `numactl`, `rdtsc`/`clock_gettime` 正確用法。
+6. 面試要點: 系統設計 + whiteboard + coding + debugging on the fly。要能寫出有邏輯、可測的低延遲程式片段並解釋 tradeoffs。
+
+---
+
+## 具體技能與範例 (分主題) 
+
+### 1) 現代 C++ 要會的核心 (例子) 
+- **move semantics / noexcept / RAII**: 不要拷貝大型 buffer，傳 unique_ptr / move。
+- **模板與 type traits**: 當你寫 generic zero-copy container / serializer，compile-time checking 很重要。
+- **`constexpr`/`consteval`**: 避免 runtime string parsing，能 compile-time 計算的就提前算。
+- **`alignas` / `alignof`**: 控制資料對齊。
+- **`std::atomic` + memory orders**: 了解 `memory_order_relaxed/acquire/release/seq_cst` 的差別與適用場景。
+
+```cpp
+#include <cstddef>
+struct alignas(64) Counters {
+    uint64_t tx_count;
+    uint64_t rx_count;
+};
+```
+
+### 2) Cache / alignment / false sharing (實例與檢查) 
+- Cache line ~64B (x86)。
+- 避免 false sharing: `alignas(64)`、`std::hardware_destructive_interference_size` (C++20)。
+- 工具: `perf stat -e cache-misses ...`。
+
+```cpp
+struct alignas(64) ProducerState {
+    std::atomic<uint64_t> seq;
+    char pad[64 - sizeof(std::atomic<uint64_t>)];
+};
+```
+
+### 3) Ring buffer (SPSC、lock-free) 
+
+```cpp
+template<typename T>
+class SpscRing {
+    const size_t capacity;
+    T* buffer;
+    alignas(64) std::atomic<size_t> head{0};
+    alignas(64) std::atomic<size_t> tail{0};
+
+public:
+    SpscRing(size_t cap) : capacity(cap), buffer((T*)std::aligned_alloc(64, cap * sizeof(T))) {}
+    ~SpscRing(){ std::free(buffer); }
+
+    bool push(const T& item) {
+        size_t t = tail.load(std::memory_order_relaxed);
+        size_t next = (t + 1) % capacity;
+        if (next == head.load(std::memory_order_acquire)) return false; // full
+        buffer[t] = item;
+        tail.store(next, std::memory_order_release);
+        return true;
+    }
+
+    bool pop(T& out) {
+        size_t h = head.load(std::memory_order_relaxed);
+        if (h == tail.load(std::memory_order_acquire)) return false; // empty
+        out = buffer[h];
+        head.store((h + 1) % capacity, std::memory_order_release);
+        return true;
+    }
+};
+```
+
+### 4) 減少 syscalls / context switches
+- 使用 `sendmmsg` / `recvmmsg`。
+- busy-polling 在延遲優先場景。
+- DPDK poll-mode driver 或 `SO_BUSY_POLL`。
+
+### 5) clock / latency measurement
+```cpp
+#include <time.h>
+inline uint64_t now_ns() {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
+    return uint64_t(ts.tv_sec) * 1'000'000'000 + ts.tv_nsec;
+}
+```
+
+### 6) Kernel bypass、DPDK、Solarflare (概念) 
+- **DPDK**: hugepages、user-space driver、polling。
+- **Solarflare / Onload**: user-mode TCP stack。
+- tradeoffs: 低 latency vs. 複雜度、運維成本。
+
+### 7) Multicast / market data
+- 特點: reordering, packet loss, sequence numbers, gap recovery。
+- 設計: multicast listener → parser → aggregator → orderbook。
+- 優化: zero-copy、preallocated pool、batching。
+
+### 8) Tick-to-trade pipeline
+- Stages: 
+  1. NIC handler → parse
+  2. Market data handler → orderbook
+  3. Strategy engine
+  4. Risk checks
+  5. Execution (FIX/binary)
+- 關鍵: hot path 單線程、lockless。
+
+---
+
+## 面試常考題
+1. **false sharing**: cache line 被不同 thread 寫入導致 cache invalidation → 用 padding 或 align。
+2. **memory order**: `relaxed` 無同步，`acquire/release` 有同步。
+3. **SPSC queue**: 解釋 memory order 選擇。
+4. **延遲測量**: 用 `clock_gettime` + histogram。
+5. **kernel-bypass**: 優缺點分析。
+6. **latency debug**: 用 perf、strace、numactl。
+
+---
+
+## 練習清單
+1. **SPSC ring + latency benchmark**
+2. **簡易 market feed parser + orderbook**
+3. **DPDK demo** (若環境允許) 
+
+---
+
+## 工具 & 命令清單
+- `perf`, `gdb`, `valgrind`, `numactl`, `taskset`
+- `htop`, `iostat`, `sar`
+- `tcpdump`, `wireshark`
+- `strace -c`
+- HdrHistogram
+
+---
+
+## 履歷 / pitch 建議
+- 強調具體數字 (延遲改善、throughput)。
+- 關鍵技術詞: DPDK, multicast, sendmmsg, recvmmsg, rdtsc, atomic memory model。
+- 提供 repo/README，包含 benchmark。
+
+---
+
+## 常見錯誤
+- hot path 動態配置。
+- 使用 mutex。
+- atomic 沒考慮 memory order。
+- 測試環境沒固定 CPU / 關閉 turbo boost。
+
+---
+
+## 學習進度 checklist
+- [ ] 熟讀 memory model + 實驗
+- [ ] SPSC ring + latency histogram
+- [ ] market feed parser + orderbook
+- [ ] 使用 perf/rdtsc/numactl
+- [ ] DPDK 範例 (或至少理解) 
+- [ ] 準備 3~5 個實例能說出 tradeoffs
+
+---
+
+## 面試 coding 題
+- **SPSC queue**: 提供程式 + 解釋 memory order。
+- **tick-to-trade pipeline**: 畫圖說明 stage 與 tradeoffs。
+
+---
+
+## 建議的小結
+- 展現 hot path 最佳化能力。
+- Demo + 測量結果。
+- Tradeoffs 清楚一句話解釋。
+- 練習白板系統設計與 debug。
+
+面試常考題 (附答案要點與練習) 
+
+什麼是 false sharing? 怎麼解決?
+
+答: 不同 thread 的變數位於相同 cache line，導致不必要 cache invalidation。解: padding、alignas(64)、把 hot fields 分離到不同 cache lines。
+
+memory_order_relaxed 和 memory_order_acquire/release 差別？示例。
+
+答: relaxed 只有 atomic atomicity，沒有同步；acquire/release 建立同步關係，保證順序。示例: producer 做 release，consumer 做 acquire。
+
+寫一個高效的 SPSC queue (白板) 
+
+答: 畫出 head/tail、使用 modulo、說明 memory orders 與 padding。
+
+怎麼測量 1us 級別延遲？如何報告 p99/p999？
+
+答: 使用 clock_gettime(CLOCK_MONOTONIC_RAW), 收集 histogram (HdrHistogram)，確保 pin CPU, disable freq scaling, 避免 process migration。
+
+討論 kernel-bypass 的優缺點
+
+答: 優點: 低延遲、低 jitter、zero-copy；缺點: 複雜、ops 成本、需要 hugepages、專有 driver，安全性/網路堆疊功能犧牲。
+
+Fix 一段 latency 高的程式: 你會怎麼 debug？
+
+答: 先重現、pin CPU、收 perf top / perf record, 查看 syscalls (strace -c)、查看 context switches、檢查 cache miss、檢查 locks/contended mutexes (perf lock)。

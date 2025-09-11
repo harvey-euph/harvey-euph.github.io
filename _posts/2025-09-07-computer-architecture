@@ -1,0 +1,24 @@
+---
+title: "讀書筆記: Computer Architecture: A Quantitative Approach"
+date: 2025-07-27 00:00:00 +0800
+categories: [Careers, Notes]
+tags: [Tech, Computer Architecture]
+---
+
+## Chapter 2 Memory Hierarchy Design
+
+### 2.1 Introduction
+
+- The principle of locality
+:  most programs do not access all code or data uniformly. Locality occurs in time (temporal locality) and in space (spatial locality)
+
+- The goal is to provide a memory system with cost per byte almost as low as the cheapest level of memory and speed almost as fast as the fastest level.
+
+- inclusion property: In most cases (but not all), the data contained in a lower level are a superset of the next higher level.
+
+
+###
+
+## Multiprocessors and Thread-Level Parallelism
+
+## 
