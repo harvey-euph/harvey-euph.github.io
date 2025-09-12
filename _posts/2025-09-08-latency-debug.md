@@ -5,6 +5,36 @@ categories: [Careers, Notes]
 tags: [Tech, Computer Architecture]
 ---
 
+## 一些小操作
+
+```
+pidof bin/tradeServer_tls
+
+這樣可以看到一個程式的 thread 訊息
+```
+harvey@dev-server:~$ ps -T -p $(pidof bin/tradeServer_tls)
+    PID    SPID TTY          TIME CMD
+ 360301  360301 pts/6    00:00:00 tradeServer_tls
+ 360301  360302 pts/6    00:00:00 tradeServer_tls
+ 360301  360303 pts/6    00:00:00 asio
+ 360301  360304 pts/6    00:00:00 ZMQbg/Reaper
+ 360301  360305 pts/6    00:00:00 ZMQbg/IO/0
+ 360301  360306 pts/6    00:03:42 client
+ 360301  360307 pts/6    00:00:00 tradeServer_tls
+ 360301  360308 pts/6    08:42:36 ib
+ 360301  360309 pts/6    08:42:36 workerThread
+```
+
+## 看 syscalls
+
+```
+sudo strace -ff -tt -T -p $(pidof bin/tradeServer_tls) -e futex,epoll_wait,recvfrom -o strace.log
+```
+
+
+> 以下內容來自 LLM 且未經整理以及實證，實驗過後的確認有用的內容會搬到上面
+{: .prompt-tip }
+
 ## 前置準備
 
 ### Step 1: 建立工作目錄
@@ -13,8 +43,6 @@ mkdir latency_debug_$(date +%Y%m%d_%H%M)
 cd latency_debug_$(date +%Y%m%d_%H%M)
 ```
 
-> 以下內容來自 LLM 且未經整理以及實證，實驗過後的確認有用的內容會搬到上面
-{: .prompt-tip }
 
 
 ### Step 2: 確認程式狀態
