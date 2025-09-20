@@ -1,5 +1,5 @@
 ---
-title: "西文動詞變化"
+title: "西文 - 動詞變化"
 date: 2025-09-19 00:00:00 +0800
 categories: [Life, Language]
 tags: [Spanish, Language]
