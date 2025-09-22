@@ -1,15 +1,15 @@
 ---
-title: "西文筆記: YA vs TODAVÍA"
+title: "西文筆記: Real Fast Spanish"
 date: 2025-09-19 00:00:00 +0800
 categories: [Life, Language]
 tags: [Spanish, Language]
 ---
 
-本文為 youtuber [Real Fast Spanish](https://www.youtube.com/@realfastspanish) 部分影片的筆記
+本文為 youtuber [Real Fast Spanish](https://www.youtube.com/@realfastspanish) 影片的筆記
 
 ### [YA vs TODAVÍA - How to Use these WITHOUT translating](https://www.youtube.com/watch?v=NA9uaIqCD-Q)
 
-可能會在完成式遇到兩者翻譯不知道該怎麼選，直接翻譯會有以下可能:
+可能會在完成式遇到 Ya 和 Todavía 兩者翻譯不知道該怎麼選，直接翻譯會有以下可能:
 
 - Ya -> **Already**, Now, By now, **Yet**, **Still**, No longer, Any more
 - Todavía -> **Yet**, **Still**, Even, **Already**
@@ -27,14 +27,14 @@ tags: [Spanish, Language]
 - ¿Esta Luisa todavía aqui? -> Is Luisa still here?
     - No, ya no esta aqui -> No, she is no longer here.
 
-四個象限情境
+用四個象限情境來理解就可以不用翻譯就知道要用哪一個
 
-分成發問者意圖詢問的狀態是現在的狀態還是過去的狀態，以及回答的答案是否
+情境分成發問者意圖詢問的狀態是現在的狀態還是過去的狀態，以及回答的答案是否為 Yes
 
-| Expectation | Positive   | Negative      |
-| ----------- | ---------- | ------------- |
-| Present     | A: todavía | B: ya no      |
-| Past        | C: ya      | D: todavía no |
+| Expectation | Positive (Yes) | Negative (No) |
+| ----------- | -------------- | ------------- |
+| Present     | A: todavía     | B: ya no      |
+| Past        | C: ya          | D: todavía no |
 
 - ¿Todavía vives en Lima? -> Are you still living in Lima? (發問者已知過去住處，**詢問現在住處**)
     - A: Si, todavía vivo en Lima -> Yes, I am still living in Lima.
