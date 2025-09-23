@@ -80,14 +80,14 @@ tags: [Spanish, Language]
 | Ser   | Era                      | Fui                  |
 | Estar | Estaba                   | Estuve               |
 
-| 人稱       | Ser (未完成過去時) | Ser (簡單過去時) | Estar (未完成過去時) | Estar (簡單過去時) |
-|------------|-------------------|-----------------|---------------------|-------------------|
-| Yo                  | **era**           | **fui**         | **estaba**          | **estuve**        |
-| Tú                  | eras              | fuiste          | estabas             | estuviste         |
-| Él/Ella/Usted       | era           | fue             | estaba              | estuvo            |
-| Nosotros            | éramos            | fuimos          | estábamos           | estuvimos         |
-| Vosotros            | erais             | fuisteis        | estabais            | estuvisteis       |
-| Ellos/Ellas/Ustedes | eran      | fueron          | estaban             | estuvieron        |
+|                     | Ser     |          | Estar      | Estar       |
+| ------------------- | ------- | -------- | ---------- | ----------- |
+| Yo                  | **era** | **fui**  | **estaba** | **estuve**  |
+| Tú                  | eras    | fuiste   | estabas    | estuviste   |
+| Él/Ella/Usted       | era     | fue      | estaba     | estuvo      |
+| Nosotros            | éramos  | fuimos   | estábamos  | estuvimos   |
+| Vosotros            | erais   | fuisteis | estabais   | estuvisteis |
+| Ellos/Ellas/Ustedes | eran    | fueron   | estaban    | estuvieron  |
 
 ---
 
@@ -127,7 +127,7 @@ She was selected for the national team.
 Ella fue seleccionado para el equipo nacional.
 
 Why were you not selected for the position.
-?Por que no fuiste seleccionado para el puesto?
+¿Por que no fuiste seleccionado para el puesto?
 
 We were not invited to the wedding.
 No fuimos invitados a la boda.
@@ -150,7 +150,7 @@ They weren't at home when I knocked on the door.
 No estaban en casa cuando llame a la puerta.
 
 Where were you yesterday when I was at work?
-?Donde estabas ayer cuando yo estaba en el trabajo?
+¿Donde estabas ayer cuando yo estaba en el trabajo?
 
 #### Anchor Phrase 3 - Estaba en ... (periodo de tiempo) (I was in/at ... (period of time))
 
