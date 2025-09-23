@@ -72,7 +72,6 @@ tags: [Spanish, Language]
 - Estar 是 Non-essential Characteristics
 
 而不是用持續時間長短來判斷，不會因為你只會暫時是學生而變成 Estoy estudiante.
----
 
 因此 I was 在西文中就會有四種變位: Estaba, Estuve, Era, Fui，分別來自
 
