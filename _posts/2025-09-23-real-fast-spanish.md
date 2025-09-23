@@ -64,3 +64,102 @@ tags: [Spanish, Language]
     - D: No, todavía no tengo mis gafas.
 
 
+### [Estaba vs Estuve vs Era vs Fui: "I was" in Spanish](https://www.youtube.com/watch?v=RubvgfZEVus)
+
+英文中的 I am 在西文中有兩個可能: Ser/Estar，最核心的概念是
+
+- Ser 是 Essential Characteristics
+- Estar 是 Non-essential Characteristics
+
+而不是用持續時間長短來判斷，不會因為你只會暫時是學生而變成 Estoy estudiante.
+---
+
+因此 I was 在西文中就會有四種變位: Estaba, Estuve, Era, Fui，分別來自
+
+|       | Imperfecto de Indicativo | Pretérito Indefinido |
+| ----- | ------------------------ | -------------------- |
+| Ser   | Era                      | Fui                  |
+| Estar | Estaba                   | Estuve               |
+
+| 人稱       | Ser (未完成過去時) | Ser (簡單過去時) | Estar (未完成過去時) | Estar (簡單過去時) |
+|------------|-------------------|-----------------|---------------------|-------------------|
+| Yo                  | **era**           | **fui**         | **estaba**          | **estuve**        |
+| Tú                  | eras              | fuiste          | estabas             | estuviste         |
+| Él/Ella/Usted       | era           | fue             | estaba              | estuvo            |
+| Nosotros            | éramos            | fuimos          | estábamos           | estuvimos         |
+| Vosotros            | erais             | fuisteis        | estabais            | estuvisteis       |
+| Ellos/Ellas/Ustedes | eran      | fueron          | estaban             | estuvieron        |
+
+---
+
+#### Anchor Phrase 1 - Cuanto era joven ... (When I was young ...)
+
+搭配例子:
+
+When I was young, I didn't like cheese.
+Cuanto era joven, no me gustaba el queso.
+
+When I was young, my brother and I used to go to the beach a lot.
+Cuanto era joven, mi hermano y yo ibamos mucho a la playa.
+
+其他例子:
+
+Cuanto era nino, ... 
+Cuanto era estudiant, comia arroz con queso todos los dias.
+Cuanto era adolescente (teenager), me mude a la ciudad.
+
+#### Anchor Phrase 2 - Fui elegido para ... (I was chosen for ...)
+
+I was chosen to represent my school in the competition.
+Fui elegido para representar a mi escuela en el concurso.
+
+I was chosen for the exchange program.
+Fui elegido para el programa de intercambio.
+
+其他例子:
+
+I was selected for ...
+Fui seleccionado para ... 
+
+I was invited to ...
+Fui invitado a ... 
+
+She was selected for the national team.
+Ella fue seleccionado para el equipo nacional.
+
+Why were you not selected for the position.
+?Por que no fuiste seleccionado para el puesto?
+
+We were not invited to the wedding.
+No fuimos invitados a la boda.
+
+#### Anchor Phrase 3 - Estaba en ... cuando ... (I was in/at ... when ...)
+
+I was at home when you called me.
+Estaba en la casa cuando me llamaste.
+
+I was in the office when the news arrived.
+Estaba en la oficina cuando llego la noticia.
+
+I was in class when my phone rang.
+Estaba en la clase cuando sono mi telefono.
+
+He was in the supermarket when I saw him.
+El estaba en el supermercado lo vi.
+
+They weren't at home when I knocked on the door.
+No estaban en casa cuando llame a la puerta.
+
+Where were you yesterday when I was at work?
+?Donde estabas ayer cuando yo estaba en el trabajo?
+
+#### Anchor Phrase 3 - Estaba en ... (periodo de tiempo) (I was in/at ... (period of time))
+
+I was at home all day.
+Estuve en casa todo el dia.
+
+I was at the conference for a few hours.
+Estuve en la conferencia unas horas.
+
+I was in Barcelona for three days.
+Estuve en Barcelona (por) tres dias.
