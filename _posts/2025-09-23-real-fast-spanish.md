@@ -81,14 +81,14 @@ tags: [Spanish, Language]
 | Estar | Estaba                   | Estuve               |
 
 |                     | Imperfecto | de Indicativo | Pretérito | Indefinido |
-|                     | Ser     | Estar            | Ser      | Estar       |
-| ------------------- | ------- | ---------------- | -------- | ----------- |
-| Yo                  | **era** | **estaba**       | **fui**  | **estuve**  |
-| Tú                  | eras    | estabas          | fuiste   | estuviste   |
-| Él/Ella/Usted       | era     | estaba           | fue      | estuvo      |
-| Nosotros            | éramos  | estábamos        | fuimos   | estuvimos   |
-| Vosotros            | erais   | estabais         | fuisteis | estuvisteis |
-| Ellos/Ellas/Ustedes | eran    | estaban          | fueron   | estuvieron  |
+|                     | Ser        | Estar         | Ser       | Estar       |
+| ------------------- | ---------: | :------------ | --------: | :---------- |
+| Yo                  | **era**    | **estaba**    | **fui**   | **estuve**  |
+| Tú                  | eras       | estabas       | fuiste    | estuviste   |
+| Él/Ella/Usted       | era        | estaba        | fue       | estuvo      |
+| Nosotros            | éramos     | estábamos     | fuimos    | estuvimos   |
+| Vosotros            | erais      | estabais      | fuisteis  | estuvisteis |
+| Ellos/Ellas/Ustedes | eran       | estaban       | fueron    | estuvieron  |
 
 ---
 
