@@ -64,33 +64,42 @@ tags: [Spanish, Language]
     - D: No, todavía no tengo mis gafas.
 
 
-### [Estaba vs Estuve vs Era vs Fui: "I was" in Spanish](https://www.youtube.com/watch?v=RubvgfZEVus)
+### [Ser vs Estar - How to Stop Translating in Your Head](https://www.youtube.com/watch?v=Oinp8mk9cGE)
 
-英文中的 I am 在西文中有兩個可能: Ser/Estar，最核心的概念是
+英文中的 I am 在西文中有兩個可能: Ser/Estar，常見的解釋是
+
+- Ser 是 Permanent Characteristics
+- Estar 是 Temporary Characteristics
+
+而這個解釋是有瑕疵的，真正的思考方式應該是
 
 - Ser 是 Essential Characteristics
 - Estar 是 Non-essential Characteristics
 
 而不是用持續時間長短來判斷，不會因為你只會暫時是學生而變成 Estoy estudiante.
 
-因此 I was 在西文中就會有四種變位: Estaba, Estuve, Era, Fui，分別來自
+>**REMARK** 用設計模式的角度來看的話，Ser 就是 is-a 關係，Estar 就是 has-a 關係
+{: .prompt-info }
+
+### [Estaba vs Estuve vs Era vs Fui: "I was" in Spanish](https://www.youtube.com/watch?v=RubvgfZEVus)
+
+因此 I was 在西文中就會有四種變位:
 
 |       | Imperfecto de Indicativo | Pretérito Indefinido |
 | ----- | ------------------------ | -------------------- |
 | Ser   | Era                      | Fui                  |
 | Estar | Estaba                   | Estuve               |
 
-|                     | Imperfecto | de Indicativo | Pretérito | Indefinido |
-|                     | Ser        | Estar         | Ser       | Estar       |
-| ------------------- | ---------: | :------------ | --------: | :---------- |
-| Yo                  | **era**    | **estaba**    | **fui**   | **estuve**  |
-| Tú                  | eras       | estabas       | fuiste    | estuviste   |
-| Él/Ella/Usted       | era        | estaba        | fue       | estuvo      |
-| Nosotros            | éramos     | estábamos     | fuimos    | estuvimos   |
-| Vosotros            | erais      | estabais      | fuisteis  | estuvisteis |
-| Ellos/Ellas/Ustedes | eran       | estaban       | fueron    | estuvieron  |
+以下也列舉其他 conjugation
 
----
+|                     | Ser     |          | Estar      |             |
+| ------------------- | ------- | -------- | ---------- | ----------- |
+| Yo                  | **era** | **fui**  | **estaba** | **estuve**  |
+| Tú                  | eras    | fuiste   | estabas    | estuviste   |
+| Él/Ella/Usted       | era     | fue      | estaba     | estuvo      |
+| Nosotros            | éramos  | fuimos   | estábamos  | estuvimos   |
+| Vosotros            | erais   | fuisteis | estabais   | estuvisteis |
+| Ellos/Ellas/Ustedes | eran    | fueron   | estaban    | estuvieron  |
 
 #### Anchor Phrase 1 - Cuanto era joven ... (When I was young ...)
 
