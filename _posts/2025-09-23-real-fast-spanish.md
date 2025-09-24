@@ -68,18 +68,20 @@ tags: [Spanish, Language]
 
 英文中的 I am 在西文中有兩個可能: Ser/Estar，常見的解釋是
 
-- Ser 是 Permanent Characteristics
-- Estar 是 Temporary Characteristics
+- (X) Ser 是 Permanent Characteristics
+- (X) Estar 是 Temporary Characteristics 
 
 而這個解釋是有瑕疵的，真正的思考方式應該是
 
-- Ser 是 Essential Characteristics
-- Estar 是 Non-essential Characteristics
+- (O) Ser 是 Essential Characteristics
+- (O) Estar 是 Non-essential Characteristics
 
 而不是用持續時間長短來判斷，不會因為你只會暫時是學生而變成 Estoy estudiante.
 
 >**REMARK** 用設計模式的角度來看的話，Ser 就是 is-a 關係，Estar 就是 has-a 關係
 {: .prompt-info }
+
+這則影片其實沒講到什麼重點，就是告訴你要多看多習慣，上面的原則其實是來自下面的影片:
 
 ### [Estaba vs Estuve vs Era vs Fui: "I was" in Spanish](https://www.youtube.com/watch?v=RubvgfZEVus)
 
