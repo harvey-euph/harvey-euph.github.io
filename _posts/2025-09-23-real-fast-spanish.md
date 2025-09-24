@@ -5,7 +5,7 @@ categories: [Life, Language]
 tags: [Spanish, Language]
 ---
 
-本文為 youtuber [Real Fast Spanish](https://www.youtube.com/@realfastspanish) 影片的筆記
+本文為 Youtuber [Real Fast Spanish](https://www.youtube.com/@realfastspanish) 影片的筆記
 
 ### [YA vs TODAVÍA - How to Use these WITHOUT translating](https://www.youtube.com/watch?v=NA9uaIqCD-Q)
 
@@ -109,56 +109,150 @@ Cuanto era adolescente (teenager), me mude a la ciudad.
 
 #### Anchor Phrase 2 - Fui elegido para ... (I was chosen for ...)
 
-I was chosen to represent my school in the competition.
-Fui elegido para representar a mi escuela en el concurso.
+- Fui elegido para representar a mi escuela en el concurso.
+: I was chosen to represent my school in the competition.
 
-I was chosen for the exchange program.
-Fui elegido para el programa de intercambio.
+- Fui elegido para el programa de intercambio.
+: I was chosen for the exchange program.
 
 其他例子:
 
-I was selected for ...
-Fui seleccionado para ... 
+- Fui seleccionado para ... 
+: I was selected for ...
 
-I was invited to ...
-Fui invitado a ... 
+- Fui invitado a ... 
+: I was invited to ...
 
-She was selected for the national team.
-Ella fue seleccionado para el equipo nacional.
+- Ella fue seleccionado para el equipo nacional.
+: She was selected for the national team.
 
-Why were you not selected for the position.
-¿Por que no fuiste seleccionado para el puesto?
+- ¿Por que no fuiste seleccionado para el puesto?
+: Why were you not selected for the position.
 
-We were not invited to the wedding.
-No fuimos invitados a la boda.
+- No fuimos invitados a la boda.
+: We were not invited to the wedding.
 
 #### Anchor Phrase 3 - Estaba en ... cuando ... (I was in/at ... when ...)
 
-I was at home when you called me.
 Estaba en la casa cuando me llamaste.
+I was at home when you called me.
 
-I was in the office when the news arrived.
 Estaba en la oficina cuando llego la noticia.
+I was in the office when the news arrived.
 
-I was in class when my phone rang.
 Estaba en la clase cuando sono mi telefono.
+I was in class when my phone rang.
 
-He was in the supermarket when I saw him.
 El estaba en el supermercado lo vi.
+He was in the supermarket when I saw him.
 
-They weren't at home when I knocked on the door.
 No estaban en casa cuando llame a la puerta.
+They weren't at home when I knocked on the door.
 
-Where were you yesterday when I was at work?
 ¿Donde estabas ayer cuando yo estaba en el trabajo?
+Where were you yesterday when I was at work?
 
 #### Anchor Phrase 3 - Estaba en ... (periodo de tiempo) (I was in/at ... (period of time))
 
-I was at home all day.
 Estuve en casa todo el dia.
+I was at home all day.
 
-I was at the conference for a few hours.
 Estuve en la conferencia unas horas.
+I was at the conference for a few hours.
 
-I was in Barcelona for three days.
 Estuve en Barcelona (por) tres dias.
+I was in Barcelona for three days.
+
+### [How to use LO QUE in Spanish](https://www.youtube.com/watch?v=4URFWAOaL64)
+
+Lo que 有以下兩種情境
+
+- What
+
+    - Esto no es **lo que** quiero.
+    : This is not **what** I want.
+
+    - No tengo hacer **lo que** quiero hacer.
+    : I don't have to do **what** I want to do.
+
+    - ... porque desorden es **lo que** hay.
+    : ... because disorder is **what** there will be.
+
+    - Yo quiero lograr **lo que** ya ha logrado.
+    : I want to achieve **what** they have achieved.
+
+    - Me da miedo **lo que** sigue.
+    : I gives me fear **what** follows.
+
+    - Entiende mas de **lo que** habla.
+    : She understands more than **what** she speaks.
+
+- that
+
+    - Todo **lo que** quiero es ...
+    : All **that** I want is ...
+    
+    - Todo **lo que** necesito es ...
+    : All **that** I need is ...
+    
+    - Todo **lo que** puedo hacer es ...
+    : All **that** I can do is ...
+
+    - Todo **lo que** puedo hacer en estas situaciones es reirme.
+    : All **that** I can do in this situation is laugh. 
+
+    - Necesito procesar todo **lo que** esta pasando.
+    : I need to process everything **that** is happenning.
+
+    - Le explique todo **lo que** me ha pasado.
+    : I explained to him everything **that** happened to me.
+
+- 而如果是這兩種情形會是 Que <-> what
+
+    - ?Que quieres?
+    : What do you want?
+
+    - ?Que tienes?
+    : What do you have?
+
+    - ?Que vas a hacer?
+    : What are you going?
+
+- What 之後的子句為 inf. form (non-conjugate)
+
+    - No se que decir.
+    : I don't know what to say.
+
+    - No puedo decidir que comer.
+    : I can't decide what to eat.
+
+    - Voy a decirte que hacer.
+    : I'm going to tell you what to do.
+
+    - No saber que hacer con tu vida es algo positivo.
+    : Not knowning what to do in your live is something positive.
+
+
+>以下內容尚未整理完成
+{: .prompt-warning }
+
+### [TENER vs HABER - 3 Ways to Use "To Have" Verbs in Spanish](https://www.youtube.com/watch?v=5EPKegZJzkU)
+
+Tener 和 Haber 翻譯成英文都是 to have，這一段要來分辨如何區別兩者
+
+#### Tener: possession or ownership
+
+No tengo nada que ponerme.
+
+I have no idea.
+No tengo ni idea.
+
+I have to tell him the plan.
+Tengo que decirle del plan.
+
+#### Haber
+
+There is nothing to celebrate.
+No hay nada que celebrar.
+
+There is a lot of music 
