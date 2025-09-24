@@ -103,77 +103,71 @@ tags: [Spanish, Language]
 | Vosotros            | erais   | fuisteis | estabais   | estuvisteis |
 | Ellos/Ellas/Ustedes | eran    | fueron   | estaban    | estuvieron  |
 
-#### Anchor Phrase 1 - Cuanto era joven ... (When I was young ...)
+- Anchor Phrase 1 - Cuanto era joven ... (When I was young ...)
 
-搭配例子:
+    - Cuanto era joven, no me gustaba el queso.
+    : When I was young, I didn't like cheese.
 
-When I was young, I didn't like cheese.
-Cuanto era joven, no me gustaba el queso.
+    - Cuanto era joven, mi hermano y yo ibamos mucho a la playa.
+    : When I was young, my brother and I used to go to the beach a lot.
 
-When I was young, my brother and I used to go to the beach a lot.
-Cuanto era joven, mi hermano y yo ibamos mucho a la playa.
+    - Cuanto era nino, ... 
+    - Cuanto era estudiant, comia arroz con queso todos los dias.
+    - Cuanto era adolescente (teenager), me mude a la ciudad.
 
-其他例子:
+- Anchor Phrase 2 - Fui elegido para ... (I was chosen for ...)
 
-Cuanto era nino, ... 
-Cuanto era estudiant, comia arroz con queso todos los dias.
-Cuanto era adolescente (teenager), me mude a la ciudad.
+    - Fui elegido para representar a mi escuela en el concurso.
+    : I was chosen to represent my school in the competition.
 
-#### Anchor Phrase 2 - Fui elegido para ... (I was chosen for ...)
+    - Fui elegido para el programa de intercambio.
+    : I was chosen for the exchange program.
 
-- Fui elegido para representar a mi escuela en el concurso.
-: I was chosen to represent my school in the competition.
+    - Fui seleccionado para ... 
+    : I was selected for ...
 
-- Fui elegido para el programa de intercambio.
-: I was chosen for the exchange program.
+    - Fui invitado a ... 
+    : I was invited to ...
 
-其他例子:
+    - Ella fue seleccionado para el equipo nacional.
+    : She was selected for the national team.
 
-- Fui seleccionado para ... 
-: I was selected for ...
+    - ¿Por que no fuiste seleccionado para el puesto?
+    : Why were you not selected for the position.
 
-- Fui invitado a ... 
-: I was invited to ...
+    - No fuimos invitados a la boda.
+    : We were not invited to the wedding.
 
-- Ella fue seleccionado para el equipo nacional.
-: She was selected for the national team.
+- Anchor Phrase 3 - Estaba en ... cuando ... (I was in/at ... when ...)
 
-- ¿Por que no fuiste seleccionado para el puesto?
-: Why were you not selected for the position.
+    - Estaba en la casa cuando me llamaste.
+    : I was at home when you called me.
 
-- No fuimos invitados a la boda.
-: We were not invited to the wedding.
+    - Estaba en la oficina cuando llego la noticia.
+    : I was in the office when the news arrived.
 
-#### Anchor Phrase 3 - Estaba en ... cuando ... (I was in/at ... when ...)
+    - Estaba en la clase cuando sono mi telefono.
+    : I was in class when my phone rang.
 
-Estaba en la casa cuando me llamaste.
-I was at home when you called me.
+    - El estaba en el supermercado lo vi.
+    : He was in the supermarket when I saw him.
 
-Estaba en la oficina cuando llego la noticia.
-I was in the office when the news arrived.
+    - No estaban en casa cuando llame a la puerta.
+    : They weren't at home when I knocked on the door.
 
-Estaba en la clase cuando sono mi telefono.
-I was in class when my phone rang.
+    - ¿Donde estabas ayer cuando yo estaba en el trabajo?
+    : Where were you yesterday when I was at work?
 
-El estaba en el supermercado lo vi.
-He was in the supermarket when I saw him.
+- Anchor Phrase 3 - Estaba en ... (periodo de tiempo) (I was in/at ... (period of time))
 
-No estaban en casa cuando llame a la puerta.
-They weren't at home when I knocked on the door.
+    - Estuve en casa todo el dia.
+    : I was at home all day.
 
-¿Donde estabas ayer cuando yo estaba en el trabajo?
-Where were you yesterday when I was at work?
+    - Estuve en la conferencia unas horas.
+    : I was at the conference for a few hours.
 
-#### Anchor Phrase 3 - Estaba en ... (periodo de tiempo) (I was in/at ... (period of time))
-
-Estuve en casa todo el dia.
-I was at home all day.
-
-Estuve en la conferencia unas horas.
-I was at the conference for a few hours.
-
-Estuve en Barcelona (por) tres dias.
-I was in Barcelona for three days.
+    - Estuve en Barcelona (por) tres dias.
+    : I was in Barcelona for three days.
 
 ### [How to use LO QUE in Spanish](https://www.youtube.com/watch?v=4URFWAOaL64)
 
