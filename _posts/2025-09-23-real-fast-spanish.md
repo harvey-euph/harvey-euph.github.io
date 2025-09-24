@@ -80,7 +80,7 @@ tags: [Spanish, Language]
 | Ser   | Era                      | Fui                  |
 | Estar | Estaba                   | Estuve               |
 
-|                     | Imperfecto de Indicativo | | Pretérito Indefinido | |
+|                     | Imperfecto | de Indicativo | Pretérito | Indefinido |
 |                     | Ser     | Estar            | Ser      | Estar       |
 | ------------------- | ------- | ---------------- | -------- | ----------- |
 | Yo                  | **era** | **estaba**       | **fui**  | **estuve**  |
