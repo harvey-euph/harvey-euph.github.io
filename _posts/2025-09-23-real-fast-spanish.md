@@ -80,14 +80,15 @@ tags: [Spanish, Language]
 | Ser   | Era                      | Fui                  |
 | Estar | Estaba                   | Estuve               |
 
-|                     | Ser     |          | Estar      | Estar       |
-| ------------------- | ------- | -------- | ---------- | ----------- |
-| Yo                  | **era** | **fui**  | **estaba** | **estuve**  |
-| Tú                  | eras    | fuiste   | estabas    | estuviste   |
-| Él/Ella/Usted       | era     | fue      | estaba     | estuvo      |
-| Nosotros            | éramos  | fuimos   | estábamos  | estuvimos   |
-| Vosotros            | erais   | fuisteis | estabais   | estuvisteis |
-| Ellos/Ellas/Ustedes | eran    | fueron   | estaban    | estuvieron  |
+|                     | Imperfecto de Indicativo | | Pretérito Indefinido | |
+|                     | Ser     | Estar            | Ser      | Estar       |
+| ------------------- | ------- | ---------------- | -------- | ----------- |
+| Yo                  | **era** | **estaba**       | **fui**  | **estuve**  |
+| Tú                  | eras    | estabas          | fuiste   | estuviste   |
+| Él/Ella/Usted       | era     | estaba           | fue      | estuvo      |
+| Nosotros            | éramos  | estábamos        | fuimos   | estuvimos   |
+| Vosotros            | erais   | estabais         | fuisteis | estuvisteis |
+| Ellos/Ellas/Ustedes | eran    | estaban          | fueron   | estuvieron  |
 
 ---
 
