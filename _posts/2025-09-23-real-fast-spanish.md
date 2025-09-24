@@ -78,8 +78,20 @@ tags: [Spanish, Language]
 
 而不是用持續時間長短來判斷，不會因為你只會暫時是學生而變成 Estoy estudiante.
 
->**REMARK** 用設計模式的角度來看的話，Ser 就是 is-a 關係，Estar 就是 has-a 關係
-{: .prompt-info }
+<!-- **REMARK**  -->
+
+<!-- 用程式的角度來看的話，Ser 就是實例關係，Estar 就是 class member 的關係? -->
+
+<!-- ```cpp -->
+<!-- class Estudiante -->
+<!-- { -->
+   <!-- std::string status = "feliz"; -->
+<!-- }; -->
+
+<!-- auto yo = std::make_unique<Estudiante>(); // Soy estudiante. -->
+<!-- assert(yo->status == "feliz"); // Estoy feliz. -->
+<!-- ``` -->
+
 
 這則影片其實沒講到什麼重點，就是告訴你要多看多習慣，上面的原則其實是來自下面的影片:
 
