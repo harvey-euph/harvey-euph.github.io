@@ -78,19 +78,18 @@ tags: [Spanish, Language]
 
 而不是用持續時間長短來判斷，不會因為你只會暫時是學生而變成 Estoy estudiante.
 
-<!-- **REMARK**  -->
+來自 GPT 的表格:
 
-<!-- 用程式的角度來看的話，Ser 就是實例關係，Estar 就是 class member 的關係? -->
-
-<!-- ```cpp -->
-<!-- class Estudiante -->
-<!-- { -->
-   <!-- std::string status = "feliz"; -->
-<!-- }; -->
-
-<!-- auto yo = std::make_unique<Estudiante>(); // Soy estudiante. -->
-<!-- assert(yo->status == "feliz"); // Estoy feliz. -->
-<!-- ``` -->
+| 類別              | 用 **ser**                                         | 用 **estar**                                    |
+| ----------------- | -------------------------------------------------- | ---------------------------------------------- |
+| **身份/本質**     | Ella **es** doctora.（她是醫生 → 身份）              | ❌                                             |
+| **國籍/來源**     | Soy de México.（我是墨西哥人/來自墨西哥）             | ❌                                             |
+| **外貌/性格特徵**  | Él **es** alto.（他很高 → 固有特徵）                | Hoy **está** guapo.（他今天看起來帥 → 暫時狀態）  |
+| **情緒**          | ❌                                                 | Estoy cansado.（我累了 → 狀態）                  |
+| **位置**          | ❌                                                 | El libro **está** en la mesa.（書在桌上）        |
+| **時間/日期**     | Hoy **es** lunes.（今天是星期一）                    | ❌                                              |
+| **事件地點**      | La fiesta **es** en mi casa.（派對在我家 → 事件屬性） | ❌                                             |
+| **食物**          | La sopa **es** buena.（這湯很好喝 → 本質）           | La sopa **está** caliente.（這湯現在很燙 → 狀態） |
 
 
 這則影片其實沒講到什麼重點，就是告訴你要多看多習慣，上面的原則其實是來自下面的影片:
@@ -249,6 +248,57 @@ Lo que 有以下兩種情境
 
     - No saber que hacer con tu vida es algo positivo.
     : Not knowning what to do in your live is something positive.
+
+
+### [5 Must-Know Uses of "Quedar" in Spanish](https://www.youtube.com/watch?v=mgQPr1LWhG0)
+
+There are 3 ways "Quedar" can appear in Spanish and futher have 5 common meaning:
+
+- verbs like gustar: Me queda ...
+
+    - #1
+    - A: Quiero el pescado. B: No me queda.
+    : A: I want the fish. B: I don't have any left.
+    - ?Te quedan tacos al pastor?
+    : Do you have any tacos al pastor left?
+    - No me queda otra.
+    : I don't have any options left.
+
+    - #2
+    - ?La camisa me queda bien?
+    : Does this shirt look good on me?
+    - Te queda bien el vestido.
+    : The dress looks good on you.
+
+- Reflexive verbs: Me quedo ...
+
+    - #3
+    - Me quedo aqui. 
+    : I'm staying here.
+    - Me voy a quedar cerca de la playa. = Voy a quedarme cerca de la playa.
+    : I'm going to stay near the beach.
+    - ?Donde te quetas?
+    : Where are you staying.
+    - ?Donde te vas a quedar? = ?Donde vas a quedarte?
+    : Where are you going to stay.
+
+    - #4
+    - Me quede sin palabras.
+    : I was left speechless.
+    - Mi madre se quedo contenta con la noticia.
+    : My mother was pleased with the news.
+    - Me quede pensando desde el otro dia que hablamos.
+    
+- Normal verbs: Quedo ... (Varies between locations)
+
+    - #5
+    - ?Quedamos el domingo? (Spain only)
+    : Shall we meet on Sunday?
+    - El pueblo queda (*esta* is used in Mexico) lejos de aqui.
+    : The town is far from here.
+
+### [Compound Phrases - Hacking Conversational Spanish](https://www.youtube.com/watch?v=7Z31WX0eGxA)
+
 
 
 >以下內容尚未整理完成
