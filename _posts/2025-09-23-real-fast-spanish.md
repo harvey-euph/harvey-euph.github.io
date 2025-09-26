@@ -299,7 +299,11 @@ There are 3 ways "Quedar" can appear in Spanish and futher have 5 common meaning
 
 ### [Compound Phrases - Hacking Conversational Spanish](https://www.youtube.com/watch?v=7Z31WX0eGxA)
 
+這是一個讓我們西文初期的學習曲線可以變平緩的做法，使用 [常見 Conjugated verb] + [動詞 inf.] 讓我們可以不用背出後面的單字所有變化，以下為常見 Conjugated verb 可以使用的例子: Quiero, Puedo, Necesito, Tengo que
 
+| Conjugated verb we can use               | verb inf. (examples) |
+| ---------------------------------------- | -------------------- |
+| Quiero<br>Puedo<br>Necesito<br>Tengo que | comer<br>... |
 
 >以下內容尚未整理完成
 {: .prompt-warning }
