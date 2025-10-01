@@ -180,6 +180,26 @@ tags: [Spanish, Language]
     - Estuve en Barcelona (por) tres dias.
     : I was in Barcelona for three days.
 
+
+### [Verbs Like Gustar (including 5 Must-Know Verbs)](https://www.youtube.com/watch?v=2g6TmTBCgLg)
+
+- Parecer (To seem)
+
+    - Me parece genial.
+    : It seems great to me.
+    - ?Te parece aburrido tu trabajo?
+    : Does your job seem boring to you?
+    - No es lo que parece.
+    : It's not what it seems.
+    - Bueno, a mi no me parece tan mal la idea de Gloria.
+    : Well, I don't think Gloria's idea is so bad.
+    - Las cosas no son lo que parecen.
+    : Things aren't what they seem.
+
+- Ir
+- Doler
+- Importar
+
 ### [How to use LO QUE in Spanish](https://www.youtube.com/watch?v=4URFWAOaL64)
 
 Lo que 有以下兩種情境
