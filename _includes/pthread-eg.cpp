@@ -1,34 +1,31 @@
-
 #include <pthread.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
 
-// Thread function for example_pthread_mutex
-void* increment_basic(void* arg)
+struct mutex_data 
 {
-    static pthread_mutex_t* mutex = NULL;
-    static int* counter = NULL;
+    pthread_mutex_t* mutex;
+    int* counter;
+    long thread_idx;
+};
 
-    // Initialize static variables from arg (passed as struct to avoid global variables)
-    struct mutex_data {
-        pthread_mutex_t* mutex;
-        int* counter;
-    };
+// Thread function for example_pthread_mutex
+void* increment_basic(void* arg) 
+{
+    // arg is a struct containing mutex, counter, and thread index
     struct mutex_data* data = (struct mutex_data*)arg;
-    if (!mutex) mutex = data->mutex;
-    if (!counter) counter = data->counter;
 
     for (int i = 0; i < 5; i++) {
-        int ret = pthread_mutex_lock(mutex);
+        int ret = pthread_mutex_lock(data->mutex);
         if (ret != 0) {
             fprintf(stderr, "increment_basic: pthread_mutex_lock failed: %s\n", strerror(ret));
             return (void*)(intptr_t)ret;
         }
-        (*counter)++;
-        printf("Basic Mutex: Thread %ld incremented counter to %d\n", (long)(intptr_t)arg, *counter);
-        ret = pthread_mutex_unlock(mutex);
+        (*data->counter)++;
+        printf("Basic Mutex: Thread %ld incremented counter to %d\n", data->thread_idx, *data->counter);
+        ret = pthread_mutex_unlock(data->mutex);
         if (ret != 0) {
             fprintf(stderr, "increment_basic: pthread_mutex_unlock failed: %s\n", strerror(ret));
             return (void*)(intptr_t)ret;
@@ -38,70 +35,64 @@ void* increment_basic(void* arg)
     return NULL;
 }
 
+struct condvar_data
+{
+    pthread_mutex_t* mutex;
+    pthread_cond_t* cond;
+    int* buffer;
+};
+
 // Thread functions for example_pthread_condvar
 void* producer(void* arg)
 {
-    struct condvar_data {
-        pthread_mutex_t* mutex;
-        pthread_cond_t* cond;
-        int* buffer;
-    };
     struct condvar_data* data = (struct condvar_data*)arg;
 
-    for (int i = 1; i <= 3; i++) {
-        int ret = pthread_mutex_lock(data->mutex);
-        if (ret != 0) {
-            fprintf(stderr, "producer: pthread_mutex_lock failed: %s\n", strerror(ret));
-            return (void*)(intptr_t)ret;
+    for (int i = 0; i < 4; i++) 
+    {
+        pthread_mutex_lock(data->mutex);
+
+        // 等待 consumer 消費完 (buffer == 0 才能生產)
+        while (*(data->buffer) != 0) {
+            pthread_cond_wait(data->cond, data->mutex);
         }
-        *(data->buffer) = i;
+
+        *(data->buffer) = 5 - 2*i;
         printf("Producer: Produced %d\n", *(data->buffer));
-        ret = pthread_cond_signal(data->cond);
-        if (ret != 0) {
-            fprintf(stderr, "producer: pthread_cond_signal failed: %s\n", strerror(ret));
-            pthread_mutex_unlock(data->mutex);
-            return (void*)(intptr_t)ret;
-        }
-        ret = pthread_mutex_unlock(data->mutex);
-        if (ret != 0) {
-            fprintf(stderr, "producer: pthread_mutex_unlock failed: %s\n", strerror(ret));
-            return (void*)(intptr_t)ret;
-        }
-        usleep(200000);
+
+        pthread_cond_signal(data->cond);  // 通知 consumer
+        pthread_mutex_unlock(data->mutex);
     }
+
     return NULL;
 }
 
-void* consumer(void* arg)
+void* consumer(void* arg) 
 {
-    struct condvar_data {
-        pthread_mutex_t* mutex;
-        pthread_cond_t* cond;
-        int* buffer;
-    };
     struct condvar_data* data = (struct condvar_data*)arg;
 
-    int ret = pthread_mutex_lock(data->mutex);
-    if (ret != 0) {
-        fprintf(stderr, "consumer: pthread_mutex_lock failed: %s\n", strerror(ret));
-        return (void*)(intptr_t)ret;
-    }
-    while (*(data->buffer) == 0) {
-        printf("Consumer: Waiting for data\n");
-        ret = pthread_cond_wait(data->cond, data->mutex);
-        if (ret != 0) {
-            fprintf(stderr, "consumer: pthread_cond_wait failed: %s\n", strerror(ret));
-            pthread_mutex_unlock(data->mutex);
-            return (void*)(intptr_t)ret;
+    while (1) 
+    {
+        pthread_mutex_lock(data->mutex);
+
+        // 等待 producer 生產 (buffer != 0 才能消費)
+        while (*(data->buffer) == 0) {
+            pthread_cond_wait(data->cond, data->mutex);
         }
+
+        if (*(data->buffer) == -1) {
+            printf("Consumer: End signal received\n");
+            pthread_cond_signal(data->cond); // 喚醒 producer 結束
+            pthread_mutex_unlock(data->mutex);
+            break;
+        }
+
+        printf("Consumer: Consumed %d\n", *(data->buffer));
+        *(data->buffer) = 0; // 清空 → 表示可以再生產
+
+        pthread_cond_signal(data->cond); // 通知 producer
+        pthread_mutex_unlock(data->mutex);
     }
-    printf("Consumer: Consumed %d\n", *(data->buffer));
-    *(data->buffer) = 0;
-    ret = pthread_mutex_unlock(data->mutex);
-    if (ret != 0) {
-        fprintf(stderr, "consumer: pthread_mutex_unlock failed: %s\n", strerror(ret));
-        return (void*)(intptr_t)ret;
-    }
+
     return NULL;
 }
 
@@ -122,26 +113,25 @@ void* worker(void* arg)
     return NULL;
 }
 
-void example_pthread_mutex() {
-    printf("=== Starting %s ===\n", __func__);
+void example_pthread_mutex() 
+{
+    printf("=== Starting example_pthread_mutex ===\n");
 
     // Basic Mutex: Protect shared counter
     pthread_mutex_t basic_mutex = PTHREAD_MUTEX_INITIALIZER;
     int shared_counter = 0;
-    struct mutex_data {
-        pthread_mutex_t* mutex;
-        int* counter;
-    } data = {&basic_mutex, &shared_counter};
-
-    pthread_t threads_basic[2];
-    for (long i = 0; i < 2; i++) {
-        int ret = pthread_create(&threads_basic[i], NULL, increment_basic, &data);
+    constexpr long N = 2;
+    struct mutex_data data[N];
+    pthread_t threads_basic[N];
+    for (long i = 0; i < N; i++) {
+        data[i] = (struct mutex_data){&basic_mutex, &shared_counter, i};
+        int ret = pthread_create(&threads_basic[i], NULL, increment_basic, &data[i]);
         if (ret != 0) {
             fprintf(stderr, "pthread_create failed: %s\n", strerror(ret));
             return;
         }
     }
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < N; i++) {
         void* retval;
         int ret = pthread_join(threads_basic[i], &retval);
         if (ret != 0) {
@@ -150,7 +140,7 @@ void example_pthread_mutex() {
             fprintf(stderr, "Thread %d returned error: %ld\n", i, (long)(intptr_t)retval);
         }
     }
-    printf("Basic Mutex: Final counter = %d (expected 10)\n", shared_counter);
+    printf("Basic Mutex: Final counter = %d (expected %ld)\n", shared_counter, N * 5);
 
     // Mutex attribute: Errorcheck type
     pthread_mutexattr_t attr_errorcheck;
@@ -278,21 +268,18 @@ void example_pthread_mutex() {
         fprintf(stderr, "pthread_mutex_destroy failed: %s\n", strerror(ret));
     }
 
-    printf("=== Ending %s ===\n\n", __func__);
+    printf("=== Ending example_pthread_mutex ===\n\n");
 }
 
-void example_pthread_condvar() {
-    printf("=== Starting %s ===\n", __func__);
+void example_pthread_condvar()
+{
+    printf("=== Starting example_pthread_condvar ===\n");
 
     // Condition variable: Producer-consumer
     pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
     pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
     int buffer = 0;
-    struct condvar_data {
-        pthread_mutex_t* mutex;
-        pthread_cond_t* cond;
-        int* buffer;
-    } data = {&mutex, &cond, &buffer};
+    struct condvar_data data = {&mutex, &cond, &buffer};
 
     pthread_t prod, cons;
     int ret = pthread_create(&prod, NULL, producer, &data);
@@ -319,43 +306,43 @@ void example_pthread_condvar() {
         fprintf(stderr, "Consumer returned error: %ld\n", (long)(intptr_t)retval);
     }
 
-    // Broadcast: Wake all
-    pthread_t consumers[2];
-    buffer = 0;
-    for (int i = 0; i < 2; i++) {
-        ret = pthread_create(&consumers[i], NULL, consumer, &data);
-        if (ret != 0) {
-            fprintf(stderr, "pthread_create (consumer %d) failed: %s\n", i, strerror(ret));
-            return;
-        }
-    }
-    usleep(500000); // Let consumers wait
-    ret = pthread_mutex_lock(&mutex);
-    if (ret != 0) {
-        fprintf(stderr, "pthread_mutex_lock failed: %s\n", strerror(ret));
-        return;
-    }
-    buffer = 99;
-    printf("Broadcast: Setting buffer to 99 and broadcasting\n");
-    ret = pthread_cond_broadcast(&cond);
-    if (ret != 0) {
-        fprintf(stderr, "pthread_cond_broadcast failed: %s\n", strerror(ret));
-        pthread_mutex_unlock(&mutex);
-        return;
-    }
-    ret = pthread_mutex_unlock(&mutex);
-    if (ret != 0) {
-        fprintf(stderr, "pthread_mutex_unlock failed: %s\n", strerror(ret));
-        return;
-    }
-    for (int i = 0; i < 2; i++) {
-        ret = pthread_join(consumers[i], &retval);
-        if (ret != 0) {
-            fprintf(stderr, "pthread_join (consumer %d) failed: %s\n", i, strerror(ret));
-        } else if (retval != NULL) {
-            fprintf(stderr, "Consumer %d returned error: %ld\n", i, (long)(intptr_t)retval);
-        }
-    }
+    // // Broadcast: Wake all
+    // pthread_t consumers[2];
+    // buffer = 0;
+    // for (int i = 0; i < 2; i++) {
+    //     ret = pthread_create(&consumers[i], NULL, consumer, &data);
+    //     if (ret != 0) {
+    //         fprintf(stderr, "pthread_create (consumer %d) failed: %s\n", i, strerror(ret));
+    //         return;
+    //     }
+    // }
+    // usleep(500000); // Let consumers wait
+    // ret = pthread_mutex_lock(&mutex);
+    // if (ret != 0) {
+    //     fprintf(stderr, "pthread_mutex_lock failed: %s\n", strerror(ret));
+    //     return;
+    // }
+    // buffer = 99;
+    // printf("Broadcast: Setting buffer to 99 and broadcasting\n");
+    // ret = pthread_cond_broadcast(&cond);
+    // if (ret != 0) {
+    //     fprintf(stderr, "pthread_cond_broadcast failed: %s\n", strerror(ret));
+    //     pthread_mutex_unlock(&mutex);
+    //     return;
+    // }
+    // ret = pthread_mutex_unlock(&mutex);
+    // if (ret != 0) {
+    //     fprintf(stderr, "pthread_mutex_unlock failed: %s\n", strerror(ret));
+    //     return;
+    // }
+    // for (int i = 0; i < 2; i++) {
+    //     ret = pthread_join(consumers[i], &retval);
+    //     if (ret != 0) {
+    //         fprintf(stderr, "pthread_join (consumer %d) failed: %s\n", i, strerror(ret));
+    //     } else if (retval != NULL) {
+    //         fprintf(stderr, "Consumer %d returned error: %ld\n", i, (long)(intptr_t)retval);
+    //     }
+    // }
 
     // Timedwait
     ret = pthread_mutex_lock(&mutex);
@@ -416,12 +403,12 @@ void example_pthread_condvar() {
         fprintf(stderr, "pthread_mutex_destroy failed: %s\n", strerror(ret));
     }
 
-    printf("=== Ending %s ===\n\n", __func__);
+    printf("=== Ending example_pthread_condvar ===\n\n");
 }
 
-void example_pthread_barrier()
+void example_pthread_barrier() 
 {
-    printf("=== Starting %s ===\n", __func__);
+    printf("=== Starting example_pthread_barrier ===\n");
 
     // Basic barrier: 3 threads wait
     pthread_barrier_t barrier;
@@ -486,13 +473,13 @@ void example_pthread_barrier()
         fprintf(stderr, "pthread_barrierattr_destroy failed: %s\n", strerror(ret));
     }
 
-    printf("=== Ending %s ===\n\n", __func__);
+    printf("=== Ending example_pthread_barrier ===\n\n");
 }
 
 int main()
 {
     example_pthread_mutex();
-    example_pthread_condvar();
-    example_pthread_barrier();
+    // example_pthread_condvar();
+    // example_pthread_barrier();
     return 0;
 }
