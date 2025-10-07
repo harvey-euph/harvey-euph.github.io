@@ -1,7 +1,7 @@
 import os
 import boto3
 
-bucket_name = os.environ['S3_BUCKET']
+bucket = os.environ['S3_BUCKET']
 region_name = os.environ.get('AWS_REGION', 'ap-northeast-1')
 local_dir = os.environ.get('LOCAL_DIR', 'asset/img-from-aws-s3')
 
@@ -11,7 +11,7 @@ s3 = boto3.client('s3', region_name=region_name)
 
 # 列出 bucket 下所有物件
 paginator = s3.get_paginator('list_objects_v2')
-for page in paginator.paginate(Bucket=bucket_name):
+for page in paginator.paginate(Bucket=bucket):
     for obj in page.get('Contents', []):
         key = obj["Key"]
         local_path = os.path.join(local_dir, key)
