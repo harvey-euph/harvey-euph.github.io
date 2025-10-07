@@ -3,7 +3,7 @@ import boto3
 
 bucket_name = os.environ['S3_BUCKET']
 region_name = os.environ.get('AWS_REGION', 'ap-northeast-1')
-local_dir = os.environ.get('LOCAL_DIR', 'asset/img-from-aws-s3')
+local_dir = os.environ.get('LOCAL_DIR', 'assets/img-from-aws-s3')
 
 s3 = boto3.client('s3', region_name=region_name)
 
