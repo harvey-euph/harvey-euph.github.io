@@ -3,7 +3,7 @@ import boto3
 
 bucket_name = os.environ['S3_BUCKET']
 region_name = os.environ.get('AWS_REGION', 'ap-northeast-1')
-local_dir = os.environ.get('LOCAL_DIR', 's3-bucket')
+local_dir = os.environ.get('LOCAL_DIR', 'asset/img')
 
 os.makedirs(local_dir, exist_ok=True)
 
