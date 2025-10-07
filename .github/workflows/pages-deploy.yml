@@ -52,8 +52,8 @@ jobs:
           LOCAL_DIR: "_assets/s3-bucket"
 
       - name: check image exist
-        run:  ll _assets/s3-bucket
-        
+        run:  ls -la _assets/s3-bucket
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
