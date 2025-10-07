@@ -18,7 +18,7 @@ for page in paginator.paginate(Bucket=bucket_name):
             continue  # 只抓圖片
 
         # 本地檔案路徑
-        local_path = os.path.join(local_dir, key)
+        local_path = os.path.join(local_dir, os.path.basename(key))
         s3.download_file(bucket_name, key, local_path)
         print(f"Downloaded {key} -> {local_path}")
 
