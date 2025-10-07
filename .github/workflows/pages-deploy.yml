@@ -8,7 +8,6 @@ on:
       - .gitignore
       - README.md
       - LICENSE
-
   workflow_dispatch:
 
 permissions:
@@ -40,14 +39,17 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
-      # 新增：抓取 S3 圖片
+      - name: Install gems
+        run: bundle install
+
       - name: Fetch S3 images
-        run: ruby _scripts/fetch_s3_images.rb
+        run: bundle exec ruby _scripts/fetch_s3_images.rb
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "ap-northeast-1"
+          AWS_REGION: ap-northeast-1
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          LOCAL_DIR: "_assets/s3-bucket"
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
@@ -57,8 +59,8 @@ jobs:
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
-            \-\-disable-external \
-            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+            --disable-external \
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
