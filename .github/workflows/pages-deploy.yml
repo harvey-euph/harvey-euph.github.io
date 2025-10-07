@@ -33,26 +33,29 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          ruby-version: 3.3
-          bundler-cache: true
+          python-version: "3.x"
 
-      - name: Install gems
-        run: bundle install
-
-      - name: Install aws-sdk-s3
-        run: gem install aws-sdk-s3
+      - name: Install boto3
+        run: pip install boto3
 
       - name: Fetch S3 images
-        run: bundle exec ruby _scripts/fetch_s3_images.rb
+        run: |
+          python _scripts/fetch_s3_images.py
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ap-northeast-1
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
           LOCAL_DIR: "_assets/s3-bucket"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
