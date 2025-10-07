@@ -42,7 +42,7 @@ jobs:
 
       # 新增：抓取 S3 圖片
       - name: Fetch S3 images
-        run: ruby _script/fetch_s3_images.rb
+        run: ruby _scripts/fetch_s3_images.rb
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
