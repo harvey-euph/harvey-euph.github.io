@@ -54,7 +54,7 @@ jobs:
       - name: check image exist
         run: |
           pwd
-          ls -la _assets/s3-bucket
+          ls -la s3-bucket
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
