@@ -317,6 +317,10 @@ There are 3 ways "Quedar" can appear in Spanish and futher have 5 common meaning
     - El pueblo queda (*esta* is used in Mexico) lejos de aqui.
     : The town is far from here.
 
+### [7 Must-Know Uses of "Llamar" in Spanish](https://www.youtube.com/watch?v=JSgvx5Q-yz8)
+
+
+
 ### [Compound Phrases - Hacking Conversational Spanish](https://www.youtube.com/watch?v=7Z31WX0eGxA)
 
 這是一個讓我們西文初期的學習曲線可以變平緩的做法，使用 [常見 Conjugated verb] + [動詞 inf.] 讓我們可以不用背出後面的單字所有變化，以下為常見 Conjugated verb 可以使用的例子: Quiero, Puedo, Necesito, Tengo que
