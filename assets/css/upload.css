@@ -1,0 +1,21 @@
+
+.file-upload-container {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.file-list {
+  margin-top: 1rem;
+  list-style-type: none;
+  padding-left: 0;
+}
+.file-list li {
+  padding: 4px 0;
+  font-family: monospace;
+}
+
+.upload-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
