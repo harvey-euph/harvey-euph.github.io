@@ -1,18 +1,31 @@
+:root {
+  --bg-color: #f8f9fa;
+  --text-color: #222;
+  --border-color: #ccc;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #ddd;
+  --border-color: #444;
+}
 
 .file-upload-container {
   padding: 1rem;
+  background: var(--bg-color);
+  color: var(--text-color);
   border-radius: 8px;
-  background: #f8f9fa;
+  border: 1px solid var(--border-color);
 }
 
 .file-list {
   margin-top: 1rem;
-  list-style-type: none;
-  padding-left: 0;
+  list-style: none;
+  padding: 0;
 }
 .file-list li {
-  padding: 4px 0;
   font-family: monospace;
+  padding: 4px 0;
 }
 
 .upload-status {
