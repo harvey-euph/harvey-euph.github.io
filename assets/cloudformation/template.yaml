@@ -1,0 +1,135 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Presigned URL API for S3 uploads (target bucket: harvey-euph-s3-github-io)
+
+Globals:
+  Function:
+    Runtime: python3.11
+    Timeout: 10
+    MemorySize: 128
+
+Parameters:
+  TargetBucketName:
+    Type: String
+    Default: harvey-euph-s3-github-io
+    Description: "The existing private S3 bucket to upload files"
+
+Resources:
+
+  PresignFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: PresignS3PutPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:PutObjectAcl
+                  - s3:PutObjectTagging
+                Resource: !Sub arn:aws:s3:::${TargetBucketName}/*
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  PresignFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.lambda_handler
+      Role: !GetAtt PresignFunctionRole.Arn
+      Environment:
+        Variables:
+          BUCKET_NAME: !Ref TargetBucketName
+      CodeUri:
+        ZipFile: |
+          import os
+          import json
+          import boto3
+          from urllib.parse import unquote_plus
+
+          s3 = boto3.client("s3")
+          BUCKET = os.environ["BUCKET_NAME"]
+
+          def lambda_handler(event, context):
+              params = event.get("queryStringParameters") or {}
+              filename = unquote_plus(params.get("filename", ""))
+              content_type = params.get("type", "application/octet-stream")
+
+              if not filename:
+                  return {
+                      "statusCode": 400,
+                      "headers": {"Access-Control-Allow-Origin": "*"},
+                      "body": json.dumps({"error": "Missing filename"})
+                  }
+
+              # basic validation
+              if ".." in filename or filename.startswith("/"):
+                  return {
+                      "statusCode": 400,
+                      "headers": {"Access-Control-Allow-Origin": "*"},
+                      "body": json.dumps({"error": "Invalid filename"})
+                  }
+
+              try:
+                  url = s3.generate_presigned_url(
+                      "put_object",
+                      Params={
+                          "Bucket": BUCKET,
+                          "Key": filename,
+                          "ContentType": content_type
+                      },
+                      ExpiresIn=3600
+                  )
+              except Exception as e:
+                  return {
+                      "statusCode": 500,
+                      "headers": {"Access-Control-Allow-Origin": "*"},
+                      "body": json.dumps({"error": str(e)})
+                  }
+
+              return {
+                  "statusCode": 200,
+                  "headers": {"Access-Control-Allow-Origin": "*"},
+                  "body": json.dumps({"url": url})
+              }
+      Events:
+        PresignApi:
+          Type: HttpApi
+          Properties:
+            Path: /api/presign
+            Method: get
+            ApiId: !Ref PresignHttpApi
+
+  PresignHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowHeaders:
+          - Content-Type
+        AllowMethods:
+          - GET
+          - OPTIONS
+        AllowOrigins:
+          - "*"
+      Description: "HTTP API for presign endpoint"
+
+Outputs:
+  ApiEndpoint:
+    Description: "HTTP API endpoint base URL"
+    Value: !Sub "https://${PresignHttpApi}.execute-api.${AWS::Region}.amazonaws.com"
+  BucketName:
+    Description: "Target S3 bucket name"
+    Value: !Ref TargetBucketName
+  LambdaArn:
+    Description: "Lambda ARN"
+    Value: !GetAtt PresignFunction.Arn
