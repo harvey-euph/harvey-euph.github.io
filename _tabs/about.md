@@ -38,6 +38,10 @@ C++, VBA, interest rate modeling, implied volatility modeling
 {% endtoggle %}
 {% endtoggle %}
 
+{% toggle 🌱 My Education %}
+
+{% endtoggle %}
+
 {% toggle 🌱 My Life %}
 
 {% toggle ✅ DONE %}
