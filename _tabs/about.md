@@ -7,7 +7,7 @@ title: About me
 
 👋 Hi, I’m Harvey — NTU Mathematics graduate (2023).
 
-Here, I share pieces of my life and my career journey.
+This is the place where I share pieces of my life and my career journey.
 <!-- , and the projects that have shaped me — both the ones I’m working on now and the ones I’ve completed. -->
 
 Take your time, look around, and discover whichever part of my story sparks your curiosity.
