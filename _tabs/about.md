@@ -38,9 +38,9 @@ C++, VBA, interest rate modeling, implied volatility modeling
 {% endtoggle %}
 {% endtoggle %}
 
-{% toggle 🌱 My Education %}
-- NTU Math 
-{% endtoggle %}
+<!-- {% toggle 🌱 My Education %} -->
+<!-- - NTU Math -->
+<!-- {% endtoggle %} -->
 
 {% toggle 🌱 My Life %}
 
