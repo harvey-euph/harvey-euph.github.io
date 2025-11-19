@@ -6,7 +6,7 @@ categories: [Careers]
 tags: [Tech]
 ---
 
-最近公司好像不賺錢開始裁人了，一個尊敬的前輩被裁了，他走後全公司會寫 C++ 的就剩下我 ==
+最近公司好像不賺錢開始裁人了，尊敬的前輩被裁了，他走後全公司會寫 C++ 的就剩下我 ==
 
 如果繼續賠錢大概是要收攤了，要來學點新東西提升一下自己，打算用我一開始找工作時的技巧: 直接找有興趣的職缺，看 Job Description 要會什麼技能就去學
 
@@ -16,7 +16,7 @@ tags: [Tech]
 
 ===============================================================================
 
-有一家公司在招 Trading Desks 的 C++ Low-Latency Engineers，有以下要求: 
+有一家公司在招 Trading Desks 的 C++ Low-Latency Engineers，要求: 
 
 - Write modern C++ (C++14/17/20) with deep fluency
 - Understand low-level performance — memory alignment, lock-free data structures, system calls, cache usage

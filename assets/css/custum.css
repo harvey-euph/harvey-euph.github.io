@@ -1,0 +1,7 @@
+#dpdk-arch svg text {
+  fill: #000 !important;
+}
+
+[data-mode="dark"] #dpdk-arch svg text {
+  fill: #fff !important;
+}
