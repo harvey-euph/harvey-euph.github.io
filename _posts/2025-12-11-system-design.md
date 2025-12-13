@@ -13,8 +13,9 @@ math: true
 1. Requirements
     - Functional Requirements: Allowed operations/Features of the system.
     - Non-Functional Requirements: Quality of the system. (scalability, availability, reliability, fault tolerance)
+    - Out of scope (Can list down and discuss/confirm whether need to reconsider the priority between other requirements)
 2. Core Entities
-3. APIs
+3. APIs: Corresponds to Functional Requirements.
 4. High-Level Design
     - Primary Goal: Satisfy Functional Requirements.
 5. Deep Dives
@@ -29,25 +30,44 @@ An online platform that allows users to purchase tickets for concerts, sports, a
 1. Requirements
 
     - Functional Requirements
-        - Book a ticket.
         - View contents
         - Search for events.
+        - Book a ticket.
 
     - Non-Functional Requirements
         - Inter-mediate ans: consistency >> availability: no double booking.
         - Senoir ans: Strong consistency for booking ticket & high availability for searching and viewing events.
+        - law-latency search
         - read >> write
         - scalability to handle surges from popular events.
 
     ---
-    
+
     - Out of scope
         - GDPR compliance
         - fault tolerance
         - etc.
 
 2. Core Entities
+    - Event
+    - Venue
+    - Performer
+    - Ticket
+
 3. APIs
+    - GET /event/:eventId -> Event & Venue & Performer & Ticket[]
+    - GET /search?term={term}&location={location}&type={type}&date={date} -> Partial<Event>[]
+    - POST /booking/reserve
+      header: JWT | sessionToken
+      body:{
+        ticketId
+      }
+    - PUT /booking/confirm
+      header: JWT | sessionToken
+      body:{
+        ticketId,
+        paymentDetails
+      }
 4. High-Level Design
     - Primary Goal: Satisfy Functional Requirements.
 5. Deep Dives
