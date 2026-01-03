@@ -21,6 +21,8 @@ math: true
 5. Deep Dives
     - Primary Goal: Satisfy Non-Functional Requirements.
 
+發現其實畫線畫部件都簡單，難就難在你有哪些想法可以降低延遲增加 through-put
+
 ## Cases
 
 ### [Design Ticketmaster](https://www.youtube.com/watch?v=fhdPyoO6aXI)
