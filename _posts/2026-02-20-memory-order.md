@@ -13,6 +13,7 @@ tags: [Tech]
 
 仙貝知識: 
 
+- 現代 CPU 和編譯器會對指令重排，只要單執行緒的結果不變，就可以自由優化，但有可能會造成跨執行序的執行結果
 - 資料存儲的等級依序為 `store buffer` -> `cache (L1->L2->L3)` -> `memory` -> `disk` -> ...
 - 其中 `cache` 受到 `MESI Protocol` 規範，其中的修改不用擔心跨 CPU 會看不到，但是 `store buffer` 就會出問題了
 - `memory_order` 就是為了解決這個問題而存在的
@@ -28,7 +29,7 @@ C++ 提供了 6 個 `memory_order`
 ```cpp
 enum memory_order
 {
-    relaxed, // 保證該操作是不可分割，不保證任何 happens-before ordering，不提供任何 synchronization
+    relaxed, // 保證該操作不可分割，不保證任何 happens-before ordering，不提供任何 synchronization
     consume, 
     acquire, // 保證該操作之後的 reads 不會提前，讀到的東西都是 release 指令之前完成的
     release, // 保證該操作之前的 writes 會先被 flush 進 cache
