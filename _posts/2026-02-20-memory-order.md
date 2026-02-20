@@ -17,9 +17,9 @@ tags: [Tech]
 - 其中 `cache` 受到 `MESI Protocol` 規範，其中的修改不用擔心跨 CPU 會看不到，但是 `store buffer` 就會出問題了
 - `memory_order` 就是為了解決這個問題而存在的
 
-一句話簡單說，`memory_order` 就是透過控制 store buffer flush 的時機來確保跨 core 的 visibility ordering
+一句話簡單說，`memory_order` 就是透過控制 `store buffer` flush 的時機來確保跨 core 的 visibility ordering
 
-不要只想著指令順序，而是要關注 store buffer 何時 flush，連帶讓其他 core 的 cache line invalidate
+不要只想著指令順序，而是要關注 `store buffer` 何時 flush，連帶讓其他 core 的 cache line invalidate
 
 以下進一步解釋和舉例
 
@@ -30,8 +30,8 @@ enum memory_order
 {
     relaxed, // 保證該操作是不可分割，不保證任何 happens-before ordering，不提供任何 synchronization
     consume, 
-    acquire, // 保證該操作之後的 reads 不會提前，也就是說讀到的東西都是 release 指令之前完成的，通常用於讀指令
-    release, // 保證該操作之前的 writes 會先被 flush 進 cache，通常用於寫指令
+    acquire, // 保證該操作之後的 reads 不會提前，讀到的東西都是 release 指令之前完成的
+    release, // 保證該操作之前的 writes 會先被 flush 進 cache
     acq_rel, // acquire + release 我還不太確定會被用在哪，還要再研究一下 (TODO)
     seq_cst
 };
