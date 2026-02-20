@@ -1,0 +1,173 @@
+---
+title: "Concurrency Programming 小記"
+date: 2026-02-15 00:00:00 +0800
+categories: [Careers, Tech]
+tags: [Tech]
+---
+
+稍微記錄一下一些關於 Concurrency Programming 的內容，整理自與 LLM 的對話紀錄
+
+## 底層記憶體與 CPU 模型
+
+### Memory Model
+
+- WHAT: Memory Model 就是在定義 **什麼順序是保證的** 以及 **什麼順序是允許被重排的**
+- WHY: 需要 Memory Model 的原因: 要控制 Reordering (重排) 和 Visibility (可見性)
+
+每個 core 有私有 cache
+
+Store buffer 延遲對其他核心可見
+
+如果沒有規範，兩個 thread 看到的世界是不一致的。
+
+        Happens-before 關係
+
+        Sequential consistency vs relaxed ordering
+
+        Compiler reordering vs CPU reordering
+
+        Acquire / Release semantics
+
+        Memory fence（full / acquire / release）
+
+### Cache Coherence
+
+        MESI protocol
+
+        False sharing
+
+        Cache line contention
+
+        NUMA effects
+
+        能解釋為什麼某些 lock-free 結構在多核下反而慢。
+
+## 同步原語，要學會使用時機和知道成本
+
+### Mutex / Spinlock
+
+        OS blocking lock vs user-space spin
+
+        何時用 spinlock（critical section 極短）
+
+        Lock convoy 問題
+
+### Condition Variable
+
+        Spurious wakeup
+
+        Lost wakeup
+
+        正確 wait loop pattern
+
+### Semaphore
+
+        Binary vs counting
+
+        Flow control use case
+
+## Deadlock / Livelock / Starvation
+
+### 畫出 wait-for graph
+### 解釋 Coffman conditions
+### 設計 lock ordering
+### 講出 try-lock + backoff 策略
+
+## Lock-free / Wait-free
+
+### Atomic primitives
+
+        CAS (Compare-And-Swap)
+
+        ABA problem
+
+        LL/SC
+
+### 常見 lock-free 結構
+
+        Lock-free stack / queue（Michael & Scott queue）
+
+        Ring buffer（Disruptor 模型）
+
+### Memory reclamation
+
+        Hazard pointer
+
+        Epoch-based reclamation
+
+## Concurrency 設計模式
+
+    1. Thread Pool
+
+    Work stealing
+
+    Backpressure
+
+    2. Actor Model
+
+    Mailbox isolation
+
+    No shared state
+
+    3. Event-driven / Reactor
+
+    epoll / kqueue
+
+    async/await state machine
+
+## 性能分析能力
+
+    真正 experienced 的標誌是：
+
+    能用 perf / flamegraph 找 contention
+
+    能量化 lock contention
+
+    能辨識 false sharing
+
+    能 benchmark throughput vs latency
+
+## 語言層面應熟悉 (C++)：
+
+    std::thread
+
+    std::atomic
+
+    memory_order
+
+    lock-free STL 結構限制
+
+## 面試問題:
+
+    為什麼 double-checked locking 以前是錯的？
+
+    為什麼 lock-free 不一定比較快？
+
+    如何設計一個 bounded MPMC queue？
+
+    如何避免 false sharing？
+
+    為什麼 volatile 不能保證原子性？
+
+## CV 要能寫出
+
+    Designed lock-free MPMC queue using CAS and memory ordering semantics
+
+    Reduced contention by eliminating false sharing (cache line padding)
+
+    Implemented thread pool with work-stealing scheduler
+
+    Optimized latency under high contention (measured via perf/flamegraph)
+
+這種感覺而不是只寫 experienced in concurrency programming
+
+
+
+store buffer flush 時機：
+
+1. coherence request (MOST COMMON)
+2. store buffer full
+3. memory fence
+4. release store (weak architectures)
+5. context switch
+6. serializing instruction
