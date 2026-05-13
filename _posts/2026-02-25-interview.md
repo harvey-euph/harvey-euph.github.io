@@ -9,7 +9,11 @@ tags: [Careers, Interview]
 
 我是吳冠宏，畢業於台大數學系。
 
+I am Kuan-Hung Wu, graduated from National Taiwan University and majored in Math
+
 過去兩年我在 Aargo Trade 擔任 C++ developer，主要負責交易系統與市場資料系統的開發與維護。工作內容涵蓋底層的連線與交易協議實作，到整個系統的運作與穩定性維護。在這段經驗中，我累積了不少處理複雜系統問題與除錯的經驗，也逐漸培養出系統化分析問題的能力。
+
+In the past two years I worked as C++ developer in Aargo Trade, mainly responsible for the developement and mainteinance of the low-latency Trading infrastructure and market data system. And with the familarity with databases like PostgreSQL and redis. Skilled in network programming, FIX-API and Executions and Orders management.
 
 我是一個具有獨立推進專案和解決問題的能力的人，也能在團隊中發揮自己的長處，在獨立作業和團隊合作都有實際解決問題或提高效率的案例。
 

@@ -49,8 +49,7 @@ mount -t proc none /proc
 mount -t sysfs none /sys
 mount -t devtmpfs none /dev
 
-echo "🔥 Boot success!"
-
+echo "Boot success!"
 exec /bin/sh
 ```
 
@@ -89,5 +88,7 @@ gdb vmlinux
 (gdb) b start_kernel
 (gdb) b rest_init
 (gdb) b kernel_init
+# ... Other kernel funtion you want to trace
 (gdb) c
 ```
+
