@@ -5,6 +5,8 @@ categories: [Careers, Tech, Portfolio]
 tags: [Tech, C++, Systems Engineering, AI, LinkedIn]
 ---
 
+![Exchange web look](/assets/img/exchange.png)
+
 It all started as a simple practice exercise: build a basic C++ matching engine. But if you’ve ever caught the performance optimization bug, you know how quickly things escalate. 
 
 My relentless pursuit of lower latency and higher throughput turned that single component into a massive learning journey. What I ended up with is a complete, high-performance exchange ecosystem built from scratch—and an entirely new perspective on modern software engineering.
