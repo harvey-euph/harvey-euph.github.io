@@ -5,7 +5,7 @@ categories: [Careers, Tech, Portfolio]
 tags: [Tech, C++, Systems Engineering, AI, LinkedIn]
 ---
 
-![Exchange web look](/assets/img/exchange.png)
+<img src="/assets/img/exchange.png" alt="Exchange web look" style="border-radius: 12px;">
 
 It all started as a simple practice exercise: build a basic C++ matching engine. But if you’ve ever caught the performance optimization bug, you know how quickly things escalate. 
 
