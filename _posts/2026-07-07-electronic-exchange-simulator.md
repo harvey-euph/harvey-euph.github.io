@@ -1,5 +1,5 @@
 ---
-title: "Building a High-Performance Crypto Exchange Ecosystem"
+title: "A High-Performance Exchange Ecosystem"
 date: 2026-07-06 00:00:00 +0800
 categories: [Careers, Tech, Portfolio]
 tags: [Tech, C++, Systems Engineering, AI, LinkedIn, Low-Latency]
